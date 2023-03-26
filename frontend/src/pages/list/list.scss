@@ -1,0 +1,367 @@
+@import "../../styles/styles.scss";
+
+.list {
+    &__result {
+        @include block-gray-md();
+        width: 100%;
+        margin: 0 0 20px 0;
+    }
+
+    &__items {
+        margin-bottom: 0;
+
+        li {
+            word-wrap: break-word;
+            font-style: normal;
+            font-weight: 300;
+            font-size: 16px;
+            line-height: 170%;
+            color: $color_main;
+            text-decoration: none;
+            padding-left: 20px;
+            margin: 0 0 20px 0;
+
+            &:last-child {
+                margin: 0;
+            }
+        }
+    }
+
+    &__buttons-wrapper {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        margin: 0 0 20px 0;
+    }
+
+    &__buttons {
+        @include button-group(10px 20px, 15px, 15px);
+    }
+
+    &__copy-icon {
+        color: $color_main;
+        width: 21px;
+        height: 21px;
+        margin: 0 0 0 8px;
+    }
+
+    &__link {
+        @include primary-button(15px);
+        margin: 0 auto;
+    }
+
+    &__empty {
+        text-align: center;
+        font-size: 17px;
+        color: $color_tertiary;
+        margin: auto;
+    }
+
+    &__copy-add {
+        font-size: 16px;
+        margin: 20px 10px;
+    }
+}
+
+@media (max-width: $xxl) {
+    .list {
+        &__result {
+            padding: 23px 18px;
+            border-radius: 15px;
+        }
+
+        &__items {
+            li {
+                padding-left: 15px;
+                margin: 0 0 15px 0;
+
+                &:last-child {
+                    margin: 0;
+                }
+            }
+        }
+
+        &__buttons {
+            @include button-group(10px 16px, 13px, 14px);
+        }
+
+        &__link {
+            @include primary-button(14px);
+            margin: 0 auto;
+        }
+
+        &__icon {
+            font-size: 20px;
+            margin: 0 0 0 8px;
+        }
+    }
+}
+
+@media (max-width: $xl) {
+    .list {
+        &__result {
+            margin: 0 0 8px 0;
+        }
+
+        &__buttons-wrapper {
+            margin: 0;
+            width: 100%;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        &__buttons {
+            @include button-group(12px 20px, 13px, 15px);
+            width: 100%;
+            margin: 8px 0;
+        }
+
+        &__link {
+            @include primary-button(15px);
+            margin: 8px auto 0 auto;
+        }
+
+        &__icon {
+            font-size: 22px;
+            margin: 0 0 0 10px;
+        }
+    }
+}
+
+
+@media (max-width: $md) {
+    .list {
+        &__result {
+            margin: 0 0 8px 0;
+            padding: 24px;
+        }
+
+        &__items {
+            padding-left: 20px;
+
+            li {
+                font-size: 15px;
+                padding-left: 12px;
+                margin: 0 0 12px 0;
+
+                &:last-child {
+                    margin: 0;
+                }
+            }
+        }
+
+        &__buttons-wrapper {
+            margin: 0;
+            width: 100%;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        &__buttons {
+            @include button-group(10px 12px, 12px, 13px);
+            width: 100%;
+            margin: 8px 0;
+        }
+
+        &__link {
+            @include primary-button(13px);
+            margin: 8px auto 0 auto;
+        }
+
+        &__icon {
+            font-size: 16px;
+            margin: 0 0 0 8px;
+        }
+    }
+}
+
+@media (max-width: $sm) {
+    .list {
+        &__result {
+            border-radius: 12px;
+        }
+
+        &__items {
+            padding-left: 14px;
+
+            li {
+                font-size: 14px;
+                padding-left: 10px;
+                margin: 0 0 10px 0;
+
+                &:last-child {
+                    margin: 0;
+                }
+            }
+        }
+
+        &__buttons {
+            @include button-group(8px 9px, 10px, 12px);
+            width: 100%;
+            margin: 5px 0;
+        }
+
+        &__link {
+            @include primary-button(12px);
+            margin: 5px auto 0 auto;
+        }
+
+        &__icon {
+            font-size: 14px;
+            margin: 0 0 0 5px;
+        }
+    }
+}
+
+@media (max-width: $xs) {
+    .list {
+        &__result {
+            border-radius: 12px;
+            padding: 25px;
+        }
+
+        &__items {
+            margin: 5px 0 0 0;
+            padding-left: 15px;
+
+            li {
+                font-size: 14px;
+                padding-left: 7px;
+                margin: 0 0 10px 0;
+
+                &:last-child {
+                    margin: 0;
+                }
+            }
+        }
+
+        &__buttons {
+            @include button-group(5px, 10px, 14px);
+            width: 100%;
+            margin: 0;
+            flex-direction: column;
+
+            button {
+                margin: 7px auto;
+                height: 50px;
+                width: 80%;
+                border-radius: 10px;
+                border: 1px solid $color_light_lines;
+
+                &:first-child {
+                    border-radius: 10px;
+                }
+
+                &:last-child {
+                    border-radius: 10px;
+                }
+            }
+        }
+
+        &__link {
+            @include primary-button(14px);
+            height: 50px;
+            width: 80%;
+            margin: 7px auto 0 auto;
+        }
+
+        &__icon {
+            font-size: 20px;
+            margin: 0 0 0 10px;
+        }
+    }
+}
+
+
+
+
+
+
+
+// @media (max-width: $lg) {
+//     .list-title {
+//         font-size: 17px;
+//         font-weight: 600;
+//         float: left;
+//     }
+
+//     .list {
+//         font-size: 17px;
+//         font-weight: 300;
+//         float: left;
+//     }
+
+// }
+
+// @media (min-width: $xl) {
+//     .list-title {
+//         font-size: 17px;
+//         font-weight: 600;
+//         float: left;
+//     }
+
+//     .list {
+//         font-size: 17px;
+//         font-weight: 300;
+//         float: left;
+//     }
+
+// }
+
+// @media (max-width: 576px) {
+
+//     .list__title {
+//         font-size: 25px;
+//         margin: 0 0 20px 0;
+//     }
+
+//     .list__wrapper {
+//         background: linear-gradient(332.51deg, #FF6B31 -24.21%, #ff6b31 -5.29%, rgba(250, 104, 55, 0.79) 2.49%, rgba(135, 38, 183, 0.761) 56.28%, rgba(152, 250, 255, 0.818) 91.15%, rgb(152, 250, 255) 100.75%);
+//         border-radius: 40px;
+//         color: #fff;
+//         display: inline-block;
+//         font-size: 14px;
+//         padding: 1px;
+//         text-decoration: none;
+//     }
+
+//     .content {
+//         margin-top: 10px;
+//     }
+
+//     #list__result {
+//         background: rgb(16, 16, 16);
+//         display: block;
+//         padding: 20px 20px 10px 10px;
+//         border-radius: 40px;
+//         line-height: 1.5;
+//     }
+// }
+
+// @media (max-width: 400px) {
+
+//     .list__title {
+//         font-size: 23px;
+//         margin: 0 0 20px 0;
+//     }
+
+//     .list__wrapper {
+//         border-radius: 35px;
+//         font-size: 14px;
+//     }
+
+//     #list__result {
+//         display: block;
+//         padding: 15px 15px 7px 10px;
+//         border-radius: 35px;
+//         line-height: 1.5;
+//     }
+
+//     .list__button-text {
+//         font-size: 14px;
+//     }
+// }

@@ -1,0 +1,102 @@
+@import "../../styles/styles.scss";
+
+.spinner {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    width: 120px;
+    height: 120px;
+
+    &-sm {
+        position: relative;
+        top: 30px;
+        left: 50%;
+        width: 60px;
+        height: 60px;
+    }
+}
+
+@keyframes animation {
+    0% {
+        stroke-dasharray: 1 98;
+        stroke-dashoffset: -105;
+    }
+
+    50% {
+        stroke-dasharray: 80 10;
+        stroke-dashoffset: -160;
+    }
+
+    100% {
+        stroke-dasharray: 1 98;
+        stroke-dashoffset: -300;
+    }
+}
+
+#spinner {
+    fill:transparent;
+    stroke: $color_special;
+    stroke-width: 3px;
+    stroke-linecap: round;
+    transform-origin: center;
+    animation-name: animation;
+    animation-duration: 1.2s;
+    animation-timing-function: cubic-bezier;
+    animation-iteration-count: infinite;
+}
+
+@media (max-width: $xs) {
+    .spinner {    
+        width: 100px;
+        height: 100px;
+        &-sm {
+            position: relative;
+            width: 50px;
+            height: 50px;
+        }    
+    }
+}
+
+$loader-colors:  $color_special, $color_chart_2, $color_chart_3, $color_chart_4;
+$loader-dash: 63;
+$loader-duration: length($loader-colors) * 1s;
+$loader-duration-alt: $loader-duration / length($loader-colors);
+$loader-keyframe: 1 / (length($loader-colors) * 2) * 100;
+
+.loader {
+  animation: loader-turn $loader-duration-alt linear infinite;
+  padding: 1rem;
+  max-width: 140px;
+  width: 100%;
+
+  @keyframes loader-turn {
+    50% { transform: rotate(180deg) }
+    100% { transform: rotate(720deg) }
+  }
+}
+
+.loader__value {
+  animation: loader-stroke $loader-duration linear infinite; 
+  fill: none;
+  stroke-dasharray: $loader-dash;
+  stroke-dashoffset: $loader-dash;
+  stroke-linecap: round;
+  stroke-width: 2;
+
+  @for $i from 1 through length($loader-colors) {
+    &:nth-child(#{$i}) {
+      stroke: nth($loader-colors, $i);
+      
+      @if $i > 1 {
+        animation-delay: ($i - 1) * $loader-duration-alt;
+      }
+    }
+  }
+  
+  @keyframes loader-stroke {
+    #{$loader-keyframe * 1%} { stroke-dashoffset: 0 }
+    #{$loader-keyframe * 2%}, 100% { stroke-dashoffset: $loader-dash }
+  }
+}

@@ -1,0 +1,34 @@
+@import "../../styles/styles.scss";
+
+.footer {
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    align-items: flex-end;
+    &__text {
+        font-family: $font_main;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        color: $color_tertiary;
+        white-space: nowrap;
+        margin: 10px auto 20px auto;
+    }
+}
+
+
+@media (max-width: $lg) {
+    .footer {
+        &__text {
+            font-size: 15px;
+        }
+    }
+}
+
+@media (max-width: $sm) {
+    .footer {
+        &__text {
+            font-size: 14px;
+        }
+    }
+}

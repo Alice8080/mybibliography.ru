@@ -1,0 +1,98 @@
+@import "../../styles/styles.scss";
+
+.about {
+    &__subtitle {
+        p {
+            margin-bottom: 20px;
+        }
+    }
+    &__text {
+        &-xl {
+            font-style: normal;
+            font-weight: 400;
+            font-size: 40px;
+            line-height: 135%;
+            color: $color_main;
+            margin: 90px 0 80px 0;
+        
+            @media (max-width: $xl) {
+                font-size: 36px;
+            }
+            
+            @media (max-width: $lg) {
+                font-size: 30px;
+                margin: 70px 0 50px 0;
+            }
+            
+            @media (max-width: $sm) {
+                font-size: 28px;
+                margin: 50px 0 30px 0;
+            }
+            
+            @media (max-width: $xs) {
+                font-size: 26px;
+                margin: 30px 0;
+            }
+        
+            span {
+                color: $color_special;
+            }
+        }
+        &-md {
+            margin: 0 auto;
+            text-align: center;
+            font-size: 17px;
+            color: $color_secondary;
+            line-height: 130%;
+            a {
+                color: $color_special;
+            }
+        }
+    }
+    &__github {
+        margin: 40px auto 0 auto;
+        text-align: center;
+        color: $color_main;
+        font-size: 17px;
+        line-height: 130%;
+        word-break: keep-all;
+        span {
+            margin-top: 10px;
+            display: block;
+            font-size: 16px;
+            color: $color_secondary;
+        }
+        svg {
+            font-size: 30px;
+            margin: -10px 10px 0 10px;
+        }
+    }
+    &__github-link {
+        text-align: center;
+        display: block;
+        margin-top: 40px;
+        font-size: 20px;
+        svg {
+            font-size: 40px;
+            margin: 0 10px 0 0;
+        }
+    }
+}
+
+@media (max-width: $xs) {
+    .about {
+        &__github {
+            svg {
+                font-size: 24px;
+            }
+        }
+        &__github-link {
+            margin-top: 30px;
+            font-size: 17px;
+            svg {
+                font-size: 30px;
+                margin: 0 10px 0 0;
+            }
+        }
+    }
+}

@@ -1,0 +1,45 @@
+@mixin field-vertical() {
+    display: flex;
+    flex-direction: column;
+    margin: 0 0 24px 0;
+    label {
+        margin-bottom: 12px;
+    }
+    .input-error {
+        margin: 8px auto 0 0;
+    }
+}
+
+@mixin field-horizontal() {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    flex-wrap: wrap;
+    margin: 0 0 20px 0;
+
+    label {
+        width: 24%;
+    }
+    input {
+        width: 74%;
+    }
+    .input-error {
+        margin: 8px 0 0 auto;
+    }
+
+    @media (max-width: $sm) {
+        flex-direction: column;
+        margin: 0 0 25px 0;
+
+        label {
+            width: 100%;
+            padding: 0;
+            margin: 0 0 10px 0;
+        }
+
+        input {
+            width: 100%;
+        }
+    }
+}

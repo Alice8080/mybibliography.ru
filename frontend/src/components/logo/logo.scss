@@ -1,0 +1,55 @@
+@import "../../styles/styles.scss";
+
+.logo {
+    opacity: 0.9;
+    display: flex;
+    align-items: center;
+    padding: 7px;
+    &__text {
+        white-space: nowrap;
+        margin: 0 0 0 18px;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 18px;
+        font-family: $font_main;
+        color: $color_main;
+        &:hover {
+            color: $color_main;
+        }
+    }
+    &__img {
+        object-fit: contain;
+        width: 28px;
+    }
+    &:focus-visible {
+        border-radius: 8px;
+        outline: solid $color_main 2px;
+    }
+}
+
+
+@media (max-width: $lg) {  
+    .logo {
+        &__text {
+            margin: 0 0 0 15px;
+            font-size: 17px;
+        }
+    
+        &__img {
+            width: 27px;
+        }
+    }
+}
+
+@media (max-width: $md) {
+    .logo {
+        &__text {
+            margin: 0 0 0 13px;
+            font-size: 16px;
+        }
+    
+        &__img {
+            width: 25px;
+        }
+    }
+}

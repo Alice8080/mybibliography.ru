@@ -1,0 +1,39 @@
+@import "../../styles/styles.scss";
+
+.type {
+    width: 100%;
+    &__section {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        margin: 0 0 30px 0;
+    }
+    h3 {
+        display: block;
+        width: 100%;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 24px;
+        line-height: 125%;
+        color: $color_highlight;
+        margin: 0 0 20px 0;
+    }
+
+    a {
+        @include secondary-outlined-button(16px);
+        margin: 0 15px 15px 0;
+    }
+}
+
+@media (max-width: $lg) {
+    .type {
+        h3 {
+            font-size: 22px;
+        }
+        a {
+            @include secondary-outlined-button(15px);
+            margin: 0 13px 13px 0;
+        }
+    }
+}

@@ -1,0 +1,122 @@
+@mixin button($font-size) {
+    color: $color_main;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: fit-content;
+    height: fit-content;
+    text-align: center;
+    font-size: $font-size;
+    padding: 10px 16px;
+    border-radius: 10px;
+
+    @media (max-width: $md) {
+        padding: 10px 14px;
+        border-radius: 8px;
+        font-size: calc($font-size - 1px);
+    }
+    
+    @media (max-width: $xs) {
+        padding: 8px 12px;
+    }
+
+    &:focus-visible {
+        transition: none;
+        outline: solid $color_main 2px;
+    }
+    
+    &:active {
+        outline: unset
+    }
+
+    svg {
+        font-size: calc($font-size + 5px);
+        margin: 0 0 0 8px;
+    }
+}
+
+@mixin primary-button($font-size) {
+    background-color: initial;
+    border: 1px solid transparent;
+    background-image: linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 0)), linear-gradient(87.49deg, #FF753E 18.01%, #F3645B 44.53%, #E55C8C 78.06%, #C349FF 98.7%);
+    background-origin: border-box;
+    background-clip: content-box, border-box;
+    box-shadow: inset 0 0 0 5px hsla(0, 0%, 49%, 0);
+    @include button($font-size);
+    @include transition();
+
+    &:hover {
+        -webkit-box-shadow: 0 1000px $color_bg inset;
+        box-shadow: 0 1000px $color_bg inset;
+        color: $color_main;
+    }
+}
+
+@mixin primary-outlined-button($font-size) {
+    background-color: initial;
+    border: 1px solid transparent;
+    background-image: linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 0)), linear-gradient(87.49deg, #FF753E 18.01%, #F3645B 44.53%, #E55C8C 78.06%, #C349FF 98.7%);
+    background-origin: border-box;
+    background-clip: content-box, border-box;
+    -webkit-box-shadow: 0 1000px $color_bg inset;
+    box-shadow: 0 1000px $color_bg inset;
+    @include button($font-size);
+    @include transition();
+
+    &:hover {
+        box-shadow: inset 0 0 0 5px hsla(0, 0%, 49%, 0);
+        color: $color_main;
+    }
+
+    @media (max-width: $xs) {
+        box-shadow: inset 0 0 0 5px hsla(0, 0%, 49%, 0);
+        color: $color_main;
+    }
+}
+
+@mixin secondary-outlined-button($font-size) {
+    border: 1px solid $color_light_lines;
+    font-weight: 300;
+    line-height: 120%;
+    @include button($font-size);
+    @include transition();
+
+    &:hover {
+        background-color: $color_light_lines;
+        color: $color_main;
+    }
+
+    svg {
+        font-size: calc($font-size + 4px);
+        margin: 0 0 0 8px;
+    }
+}
+
+@mixin secondary-button($font-size) {
+    border: 1px solid $color_light_lines;
+    line-height: 120%;
+    font-weight: 300;
+    background-color: $color_bg_light;
+    @include button($font-size);
+    @include transition();
+
+    &:hover {
+        background-color: $color_light_lines;
+        color: $color_main;
+    }
+}
+
+@mixin button-outlined-white($font-size) {
+    background-color: initial;
+    border: 1px solid $color_secondary;
+    font-weight: 300;
+    line-height: 120%;
+    @include button($font-size);
+    @include transition();
+
+    &:hover {
+        border: 1px solid $color_main;
+        background-color: $color_main;
+        color: $color_bg;
+    }
+}

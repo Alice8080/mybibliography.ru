@@ -1,0 +1,124 @@
+@mixin block-sm() {
+    width: fit-content;
+    height: fit-content;
+    padding: 12px 16px;
+    border-radius: 10px;
+    color: $color_main;
+    font-weight: 300;
+
+    @media (max-width: $md) {
+        padding: 10px 14px;
+        border-radius: 8px;
+    }
+    @media (max-width: $xs) {
+        padding: 8px 12px;
+        border-radius: 8px;
+    }
+}
+
+@mixin block-md() {
+    width: fit-content;
+    height: fit-content;
+    padding: 20px;
+    border-radius: 20px;
+    color: $color_main;
+    font-weight: 300;
+
+    @media (max-width: $md) {
+        padding: 18px;
+        border-radius: 8px;
+    }
+    @media (max-width: $xs) {
+        padding: 16px;
+        border-radius: 8px;
+    }
+}
+
+@mixin block-xl() {
+    width: fit-content;
+    height: fit-content;
+    padding: 40px; 
+    border-radius: 30px;
+    color: $color_main;
+    font-weight: 300;
+
+    @media (max-width: $xl) {
+        padding: 30px;
+        border-radius: 25px;
+    }
+    
+    @media (max-width: $sm) {
+        padding: 20px;
+        border-radius: 20px;
+    }
+}
+
+@mixin block-gray() {
+    border: 1px solid $color_light_lines;
+    background-color: $color_bg_light;
+}
+
+@mixin block-gray-sm() {
+    @include block-sm();
+    @include block-gray();
+}
+
+@mixin block-gray-md() {
+    @include block-md();
+    @include block-gray();
+}
+
+@mixin block-gray-xl() {
+    @include block-xl();
+    @include block-gray();
+}
+
+
+@mixin block-outlined-gray {
+    border: 1px solid $color_light_lines;
+}
+
+@mixin block-outlined-gray-sm() {
+    @include block-sm();
+    @include block-outlined-gray;
+}
+
+@mixin block-outlined-gray-md() {
+    @include block-md();
+    @include block-outlined-gray;
+}
+
+@mixin block-outlined-gray-xl() {
+    @include block-xl();
+    @include block-outlined-gray;
+}
+
+@mixin block-gradient() {
+    z-index: 1;
+    background-color: initial;
+    border: 1px solid transparent;
+    background-image: linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 0)), $color_gradient;
+    background-origin: border-box;
+    background-clip: content-box, border-box;
+    -webkit-box-shadow: 0 3000px $color_bg inset;
+    box-shadow: 0 3000px $color_bg inset;
+    -webkit-transition: -webkit-box-shadow .4s ease;
+    transition: -webkit-box-shadow .4s ease;
+    transition: box-shadow .4s ease;
+    transition: box-shadow .4s ease, -webkit-box-shadow .4s ease;
+}
+
+@mixin block-outlined-gradient-sm() {
+    @include block-sm();
+    @include block-gradient();
+}
+
+@mixin block-outlined-gradient-md() {
+    @include block-md();
+    @include block-gradient();
+}
+
+@mixin block-outlined-gradient-xl() {
+    @include block-xl();
+    @include block-gradient();
+}

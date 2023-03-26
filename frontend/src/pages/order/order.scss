@@ -1,0 +1,188 @@
+@import "../../styles/styles.scss";
+
+.order {
+    min-height: 80vh;
+
+    &__arrow {
+        text-align: center;
+        color: $color_secondary;
+
+        span,
+        svg {
+            margin: 20px 0 0 0;
+            font-size: 40px;
+        }
+    }
+
+    &__form {
+        margin: 20px 0;
+        @include block-outlined-gradient-xl();
+        width: 100%;
+    }
+
+    &__works {
+        display: flex;
+        label {
+            @include secondary-button(16px);
+            margin: 0 10px 10px 0;
+            &:has(input:checked) {
+                background-color: $color_light_lines;
+            }
+        }
+    }
+
+    &__sources-amount {
+        color: $color_secondary;
+        font-size: 16px;
+        font-weight: 300;
+        margin: 20px 0 30px 0;
+    }
+
+    &__title {
+        margin: 0 0 20px 0;
+    }
+
+    &__field {
+        @include field-vertical();
+        margin: 0 0 40px 0;
+    }
+
+    &__checkboxes {
+        margin: 5px 0 5px 50px;
+        display: flex;
+        flex-direction: column;
+        font-size: 16px;
+        div:nth-child(1) {
+            margin: 0 0 15px 0;
+        }
+    }
+
+    &__options {
+        display: flex;
+        align-items: center;
+        margin: 10px 0 40px 0;
+    }
+
+    &__blocks {
+        margin: 30px 0 0 0;
+        div {
+            @include block-gray-sm();
+            display: inline-flex;
+            margin: 0 20px 20px 0;
+            height: fit-content;
+            justify-content: space-between;
+            align-items: center;
+            line-height: 120%;
+            &:nth-child(1), &:nth-child(2) {
+                background-color: $color_dark_lines;
+            }
+        }
+        button {
+            @include secondary-button(16px);
+            display: inline-flex;
+            margin: 0 10px 10px 0;
+            text-decoration: underline;
+        }
+
+        img {
+            object-fit: contain;
+            width: 25px;
+            margin: auto 0 auto 10px;
+        }
+    }
+
+    &__button {
+        @include primary-button(16px);
+        margin: 0 auto;
+    }
+
+    &__info {
+        text-align: center;
+        margin: 20px 0 0 0;
+    }
+    &__oferta {
+        a {
+            text-decoration: underline;
+        }
+    }
+    &__mail {
+        @include text-gradient(16px, 400);
+    }
+
+    &__button-info {
+        svg {
+            font-size: 30px;
+        }
+    }
+}
+
+
+@media (max-width: $xl) {
+    .order {
+        &__arrow {
+            text-align: center;
+            color: $color_secondary;   
+    
+            span,
+            svg {
+                margin: 20px 0 0 0;
+                font-size: 40px;
+            }
+        }
+    
+        &__works {
+            flex-wrap: wrap;
+            justify-content: flex-start;
+
+            label {
+                @include secondary-button(15px);
+                margin: 0 10px 10px 0;
+                border-radius: 10px;
+                border: 1px solid $color_light_lines;
+                white-space: nowrap;
+
+                &:nth-child(2) {
+                    border-radius: 10px;
+                }
+
+                &:last-child {
+                    border-radius: 10px;
+                }
+            }
+        }
+        
+        &__sources-amount {
+            color: $color_secondary;
+            font-size: 16px;
+            font-weight: 300;
+            margin: 20px 0 30px 0;
+        }
+    
+        &__title {
+            margin: 0 0 20px 0;
+        }
+    }
+}
+
+@media (max-width: $sm) {
+    .order {
+        &__options {
+            flex-direction: column;
+            align-items: flex-start;
+            margin-bottom: 20px;
+        }
+        &__checkboxes {
+            margin: 20px 0;
+            font-size: 16px;
+            align-items: flex-start;
+            label {
+                margin: 0 auto 0 0;
+            }
+        }
+        &__button-info {
+            svg {
+                display: none;
+            }
+        }
+    }
+}

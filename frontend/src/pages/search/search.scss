@@ -1,0 +1,151 @@
+@import "../../styles/styles.scss";
+
+.search {
+    &__main {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: fit-content;
+        margin: 80px 0 120px 0;
+    }
+
+    &__header {
+        width: 100%;
+        text-align: center;
+        margin: 0 0 80px 0;
+    }
+
+    &__title {
+        font-style: normal;
+        font-weight: 300;
+        font-size: 26px;
+        line-height: 140%;
+        margin: 0 0 25px 0;
+        span {
+            font-weight: 700;
+        }
+    }
+
+    &__subtitle {
+        font-style: normal;
+        font-weight: 300;
+        font-size: 17px;
+        line-height: 130%;
+        margin: 0;
+        color: $color_main;
+    }
+
+    &__info {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+
+        &-button {
+            @include secondary-button(16px);
+            margin: 0 20px 20px 0;
+        }
+
+        &-order {
+            text-align: center;
+            font-weight: 300;
+            font-size: 16px;
+            line-height: 130%;
+            color: $color_secondary;
+            @include transition();
+        }
+    }
+    &__line {
+        color: $color_tertiary;
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    &__list {
+        padding: 0;
+        li {
+            word-break: break-word;
+        }
+    }
+}
+
+@media(max-width: $lg) {
+    .search {
+        &__header {
+            margin: 0 0 60px 0;
+        }
+        &__title {
+            font-size: 26px;
+        }
+        &__info {    
+            &-button {
+                @include secondary-button(16px);
+                margin: 0 20px 20px 0;
+            }
+    
+            &-order {
+                text-align: center;
+                font-weight: 300;
+                font-size: 16px;
+                line-height: 130%;
+                color: $color_secondary;
+                @include transition();
+            }
+        }
+    }
+}
+
+@media (max-width: $xs) {
+    .search {
+        &__main {
+            margin: 0 0 20px 0;
+        }
+    
+        &__header {
+            width: 100%;
+            text-align: left;
+            margin: 0 0 40px 0;
+        }
+    
+        &__title {
+            font-style: normal;
+            font-weight: 300;
+            font-size: 22px;
+            line-height: 140%;
+            margin: 0 0 25px 0;
+            span {
+                font-weight: 700;
+            }
+        }
+    
+        &__subtitle {
+            font-style: normal;
+            font-weight: 300;
+            font-size: 16px;
+            line-height: 130%;
+            margin: 0;
+            color: $color_main;
+        }
+        
+        &__info {
+            margin: 0 0 10px 0;
+            flex-direction: column-reverse;
+            &-button {
+                @include secondary-button(14px);
+                margin: 0 10px 10px 0;
+                svg {
+                    margin: 0;
+                    font-size: 20px;
+                }    
+            }
+    
+            &-order {
+                font-size: 14px;
+            }
+        }
+    }
+}

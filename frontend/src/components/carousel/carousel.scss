@@ -1,0 +1,37 @@
+@import "../../styles/styles.scss";
+
+.carousel {
+    margin: 50px 0;
+    height: 200px;
+    &-item {
+        height: 200px;
+    }
+    &__title {
+        margin: 20px auto;
+    }
+    &__button {
+        @include primary-outlined-button(16px);
+        margin: auto;
+        display: inline-flex;
+    }
+    a, button {
+        &:focus-visible {
+            transition: none;
+            outline: solid $color_main 2px;
+        }
+    }
+}
+
+@media (max-width: $xs) {
+    .carousel {
+        height: 250px;
+        &-item {
+            height: 250px;
+        }
+        &__button {
+            @include primary-outlined-button(15px);
+            margin: auto;
+            display: inline-flex;
+        }
+    }
+}

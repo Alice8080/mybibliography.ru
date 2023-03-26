@@ -1,0 +1,56 @@
+@mixin button-group($padding, $border-radius, $font-size) {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+    align-items: flex-start;
+    width: fit-content;
+    height: fit-content;
+    border-radius: $border-radius;
+
+    button,
+    a {
+        margin: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: fit-content;
+        width: fit-content;
+        text-align: center;
+        font-family: $font_main;
+        font-size: $font-size;
+        line-height: 130%;
+        font-weight: 300;
+        color: $color_main;
+        padding: $padding;
+        background-color: $color_bg_light;
+        border-top: 1px solid $color_light_lines;
+        border-bottom: 1px solid $color_light_lines;
+        border-right: 1px solid $color_light_lines;
+        @include transition();
+
+        &:hover,
+        .active {
+            background-color: $color_light_lines;
+        }
+
+        &:first-child {
+            border-left: 1px solid $color_light_lines;
+            border-radius: $border-radius 0px 0px $border-radius;
+        }
+
+        &:last-child {
+            border-radius: 0px $border-radius $border-radius 0px;
+        }
+
+        svg {
+            font-size: calc($font-size + 8px);
+            margin: 0 0 0 8px;
+        }
+
+        &:focus-visible {
+            transition: none;
+            outline: solid $color_main 2px;
+        }
+    }
+}

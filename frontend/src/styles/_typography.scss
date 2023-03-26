@@ -1,0 +1,110 @@
+@mixin font-face($font-family, $url, $weight, $style) {
+    @font-face {
+        font-family: "#{$font-family}";
+        src: url('../assets/fonts/#{$url}.woff2') format("woff2");
+        font-weight: $weight;
+        font-display: swap;
+        font-style: $style;
+    }
+}
+
+@include font-face("Mulish", "Mulish-ExtraLight", 200, normal);
+@include font-face("Mulish", "Mulish-Light", 300, normal);
+@include font-face("Mulish", "Mulish-Regular", 400, normal);
+@include font-face("Mulish", "Mulish-Medium", 500, normal);
+@include font-face("Mulish", "Mulish-SemiBold", 600, normal);
+@include font-face("Mulish", "Mulish-Bold", 700, normal);
+@include font-face("Mulish", "Mulish-ExtraBold", 800, normal);
+@include font-face("Mulish", "Mulish-Black", 900, normal);
+
+$font_main: 'Mulish', sans-serif;
+
+* {
+    font-family: $font_main;
+}
+
+h1 {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 36px;
+    line-height: 135%;
+    color: $color_main;
+    margin: 0 0 25px 0;
+
+    @media (max-width: $xl) {
+        font-size: 36px;
+        margin: 0 0 25px 0;
+    }
+    
+    @media (max-width: $lg) {
+        font-size: 36px;
+        margin: 0 0 20px 0;
+    }
+    
+    @media (max-width: $md) {
+        font-size: 32px;
+        margin: 0 0 20px 0;
+    }
+    @media (max-width: $sm) {
+        font-size: 28px;
+    }
+    
+    @media (max-width: $xs) {
+        font-size: 28px;
+    }
+}
+
+
+h2, h4, h5, h6 {    
+    font-style: normal;
+    font-weight: 300;
+    font-size: 17px;
+    line-height: 140%;
+    color: $color_secondary;
+    margin: 0 0 30px 0;
+
+    @media (max-width: $md) {
+        font-size: 16px;
+        line-height: 130%;
+    }
+    @media (max-width: $xs) {
+        line-height: 150%;
+    }    
+}
+
+h3 {    
+    font-style: normal;
+    font-weight: 300;
+    font-size: 17px;
+    line-height: 125%;
+    color: $color_main;
+    
+    @media (max-width: $md) {
+        font-size: 16px;
+        line-height: 130%;
+    }
+    
+    @media (max-width: $xs) {
+        line-height: 150%;
+    }
+}
+
+p {
+    font-size: 16px;
+    font-weight: 300;
+    color: $color_main;
+}
+
+a {
+    color: $color_main;
+    font-weight: 300;
+    &:hover,
+    &:active {
+        color: #ffffff;
+    }
+
+    &:focus-visible {
+        transition: none;
+        outline: solid $color_main 2px;
+    }
+}

@@ -1,0 +1,11 @@
+@mixin transition() {
+    transition: all .4s ease-in-out;
+}
+
+@mixin text-gradient($font-size, $font-weight) {
+    background: $color_gradient;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: $font-weight;
+    font-size: $font-size;
+}

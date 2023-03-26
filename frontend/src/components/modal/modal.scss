@@ -1,0 +1,81 @@
+@import "../../styles/styles.scss";
+
+.modal {
+    &-content {
+        @include block-gray-sm();
+        word-wrap: break-word;
+    }
+    &-content, &-header, &-body {
+        color: $color_main;
+    }
+    &-header {
+        border-bottom: 1px solid $color_light_lines;
+        margin-bottom: 10px;
+    }
+    &-body {
+        font-weight: 300;
+        line-height: 140%;
+    }
+    &-footer {
+        border-top: 1px solid $color_light_lines;
+        margin-top: 10px;
+        padding-top: 20px;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+    &__button {
+        @include button-outlined-white(15px);
+        margin: 0 10px;
+    }
+    ol {
+        font-weight: 300;
+        h4 {
+            font-size: 17px;
+            font-weight: 400;
+            margin: 15px 0 12px -20px;
+        }
+        h5 {
+            font-size: 16px;
+            font-weight: 400;
+            margin: 10px 0 10px -20px;
+        }
+    }
+
+    a {
+        color: $color_special;
+        text-decoration: underline;
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+    &__list {
+        li {
+            margin: 0 0 14px 0;
+        }
+        span {
+            font-weight: 600;
+        }
+    }
+}
+
+@media (max-width: $md) {
+    .modal {
+        &-content {
+            margin: 20px auto;
+            width: 90%;
+            padding: 10px;
+            border-radius: 12px;
+        }
+        &-title {
+            font-size: 17px;
+        }
+        &-body {
+            font-size: 15px;
+        }
+        &__button {
+            @include button-outlined-white(14px);
+            margin: 0 8px;
+        }
+    }
+}

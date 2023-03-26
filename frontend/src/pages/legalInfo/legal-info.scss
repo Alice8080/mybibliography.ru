@@ -1,0 +1,26 @@
+@import "../../styles/styles.scss";
+
+.legal-info {
+    margin: 20px 0 0 0;
+    &__list {
+        li {
+            margin: 0 0 20px 0;
+            a {
+                font-size: 18px;
+                font-weight: 300;
+                text-decoration: underline;
+                color: $color_main;
+                @include transition();
+
+                &:hover {
+                    color: $color_special;
+                }
+            }
+        }
+    }
+}
+@media (max-width: $sm) {
+    .legal-info__list li a {
+        font-size: 16px;
+    }
+}

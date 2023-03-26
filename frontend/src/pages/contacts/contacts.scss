@@ -1,0 +1,67 @@
+@import "../../styles/styles.scss";
+
+.contacts {
+    &__block {
+        margin: 20px 0;
+        padding: 20px 50px;
+        background-color: initial;
+        border: 1px solid transparent;
+        background-image: linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 0)), $color_gradient;
+        background-origin: border-box;
+        background-clip: content-box, border-box;
+        -webkit-box-shadow: 0 2000px $color_bg inset;
+        box-shadow: 0 2000px $color_bg inset;
+        border-radius: 50px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+    &__text {
+        margin: 0 0 20px 0;
+        font-size: 22px;
+        font-weight: 400;
+    }
+    &__email {
+        background: $color_gradient;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        font-weight: 300;
+        font-size: 30px;
+        margin: 20px 0 0 0;
+    }
+    &__image {
+        width: 300px;
+        margin: auto;
+    }
+}
+
+
+
+@media (max-width: $lg) {
+    .contacts {
+        &__block {
+            padding: 30px;
+        }
+        &__text {
+            margin: 0 0 20px 0;
+            font-size: 17px;
+        }
+        &__image {
+            width: 200px;
+        }
+        &__email {
+            font-size: 22px;
+        }
+    }
+}
+
+@media (max-width: $md) {
+    .contacts {
+        &__block {
+            flex-direction: column;
+        }
+        &__image {
+            width: 140px;
+        }
+    }
+}

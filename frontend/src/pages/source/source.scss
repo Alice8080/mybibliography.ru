@@ -1,0 +1,147 @@
+@import "../../styles/styles.scss";
+
+.source {
+    &__title-wrapper {
+        margin: 0 0 20px 0;
+        display: inline-flex;
+        flex-direction: row;
+        align-items: center;
+        margin: 0 0 30px 0;
+        h1 {
+            margin: 0;
+        }
+    }
+
+    &__form {
+        margin: 10px 0 30px 0;
+    }
+
+    &__nav {
+        @include button_group(12px 17px, 10px, 16px);
+        button.active {
+            color: $color_main;
+            background-color: $color_light_lines;
+        }
+    }
+
+    &__optional {
+        @include secondary-button(16px);
+        margin: 15px auto 30px 0;
+    }
+
+    &__button {
+        margin: 10px auto 0 auto;
+        @include primary-outlined-button(16px);
+        font-weight: 300;
+        svg {
+            font-size: 22px;
+            margin: 0 0 0 10px;
+        }
+    }
+
+    &__info {
+        @include secondary-button(20px);
+        margin: 0 0 0 20px;
+        svg {
+            margin: 0;
+        }
+    }
+
+    &__field {
+        @include field-horizontal();
+        &:has(input[id="editor"]),
+        &:has(input[id="third_initials_3"]) {
+            position: relative;
+            margin: 0 0 60px 0;
+        
+            &::after {
+                position: absolute;
+                left: 0;
+                top: 60px;
+                width: 100%;
+                font-weight: 300;
+                font-size: 16px;
+                color: $color_secondary;
+            }
+        }
+        &:has(input[id="editor"])::after {
+            content: "Если 3 или более составителей или редакторов, указывается только первый из них.";
+        } 
+        &:has(input[id="third_initials_3"])::after {
+            content: "Остальные авторы не указываются.";
+        }
+    }
+}
+
+@media (max-width: $lg) {
+    .source {
+        &__nav {
+            @include button_group(10px 15px, 10px, 16px);
+        }
+    }
+}
+
+@media (max-width: $md) {
+    .source {
+        &__field {
+            &:has(input[id="editor"]){
+                margin: 0 0 80px 0;
+                &::after {
+                    top: 60px;
+                    font-size: 15px;
+                }
+            }
+            &:has(input[id="third_initials_3"]) {
+                margin: 0 0 60px 0;
+                &::after {
+                    top: 60px;
+                    font-size: 15px;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: $sm) {
+    .source {
+        &__nav {
+            flex-wrap: wrap;
+            justify-content: flex-start;
+
+            button {
+                @include secondary-button(15px);
+                margin: 0 10px 10px 0;
+                border-radius: 10px;
+                border: 1px solid $color_light_lines;
+
+                &:first-child {
+                    border-radius: 10px;
+                }
+
+                &:last-child {
+                    border-radius: 10px;
+                }
+            }
+        }
+
+        &__optional {
+            @include secondary-button(15px);
+            margin: 10px auto 20px 0;
+        }
+
+        &__field {
+            &:has(input[id="editor"]) {
+                margin: 0 0 100px 0;
+                &::after {
+                    top: 80px;
+                }
+            }
+            &:has(input[id="third_initials_3"]) {
+                margin: 0 0 60px 0;
+                &::after {
+                    top: 80px;
+                }
+            }
+        }
+    }
+}
