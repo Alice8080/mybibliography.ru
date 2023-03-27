@@ -23,7 +23,7 @@
 - [Redux](https://redux.js.org/) – создание конфигурации [глобального состояния](/frontend/src/store/index.js).
 - [Redux Toolkit Query](https://redux-toolkit.js.org/rtk-query/overview) – работа с запросами к API сайта. Конфигурация асинхронных запросов описана в [apiSlice](/frontend/src/api/apiSlice.js).
 - [Chart.js](https://www.chartjs.org/), [react-chartjs-2](https://react-chartjs-2.js.org/) – создание диаграмм. Использованы в [компоненте круговой диаграммы](/frontend/src/components/doughnutChart/DoughnutChart.jsx) и [компоненте столбчатой диаграммы](/frontend/src/components/barChart/BarChart.jsx).
-- [React Bootstrap](https://react-bootstrap.github.io/). Использован при создании [компонента модального окна](/frontend/src/components/modal/Modal.jsx), [навигационной панели](/frontend/src/components/header/Header.jsx), [компоненте карусели](/frontend/src/components/carousel/Carousel.jsx).
+- [React Bootstrap](https://react-bootstrap.github.io/). Использован при создании [компонента модального окна](/frontend/src/components/modal/Modal.jsx), [навигационной панели](/frontend/src/components/header/Header.jsx), [компонента карусели](/frontend/src/components/carousel/Carousel.jsx).
 - [Docx](https://docx.js.org/), [FileSaver.js](https://github.com/eligrey/FileSaver.js) – создание и загрузка .docx файлов. Использован при разработке [хука загрузки документа](/frontend/src/hooks/useDownload.js)
 - [react-helmet-async](https://github.com/staylor/react-helmet-async) – формирование метатегов. Компонент [SEO](/frontend/src/components/SEO.jsx), использованный на всех страницах сайта. 
 - [react-cookie](https://github.com/reactivestack/cookies) – работа с Cookie. 
@@ -71,8 +71,6 @@
 
 Для приема платежей реализована интеграция сайта с платёжным провайдером ЮKassa. Интеграция была проведена с использованием [API ЮKassa](https://yookassa.ru/developers/). Для валидации данных формы заказа на стороне клиента использованы [Formik](https://formik.org/) и [Yup](https://github.com/jquense/yup). 
 
-Логика формирования объекта платежа описана в файле [views.py](/app/views.py).
-
 [Форма для ввода данных о заказе](https://mybibliography.ru/zakazat-spisok-literatury) 
 
 ![Форма для ввода данных о заказе](/readme_assets/order.png)
@@ -83,13 +81,17 @@
 
 ### Личный кабинет
 
-В [Личном кабинете](https://mybibliography.ru/account) пользователь может посмотреть все созданные им списки литературы и скопировать их; посмотреть свои последние 50 поисковых запросов и вернуться к поиску по любому из них; посмотреть информацию о созданных им заказах – введенные данные, статус, срок выполнения. 
+В [Личном кабинете](https://mybibliography.ru/account) пользователь может посмотреть все созданные им списки литературы и скопировать их; посмотреть свои последние 50 поисковых запросов и вернуться к поиску по любому из них; посмотреть информацию о созданных им заказах – введенные данные, статус, срок выполнения.
 
 ![Личный кабинет](/readme_assets/account.png)
 
 ### Статистика сайта
 
-На странице [О сайте](https://mybibliography.ru/about) представлена статистика количества оформленных ссылок и поисковых запросов, реализованных через сайт, в реальном времени. Компоненты диаграмм созданы с помощью библиотеки Chart.js. 
+На странице [О сайте](https://mybibliography.ru/about) представлена статистика количества оформленных ссылок и поисковых запросов, реализованных через сайт, в реальном времени. Компоненты диаграмм созданы с помощью библиотеки [Chart.js](https://www.chartjs.org/). 
+
+![Круговая диаграмма](/readme_assets/about.png)
+
+![Столбчатая диаграмма](/readme_assets/about_sources.png)
 
 ## Дополнительно
 
@@ -148,7 +150,7 @@ My Bibliography — это бесплатная платформа с откры
     DB_USER=db_user
     DB_PASS=db_pass
 
-В режиме разработки можно использовать SQLite, само приложение работает с MySQL. Для использования MySQL установите и запустите сервер MySQL, создайте базу данных с параметрами, соответствующие указанным в .env, и раскомментируйте соответствующие настройки базы данных в [settings.py](/main/settings.py).
+В режиме разработки можно использовать SQLite, само приложение работает с MySQL. Для использования MySQL установите и запустите сервер MySQL, создайте базу данных с параметрами, соответствующие указанным в .env, и раскомментируйте соответствующие настройки базы данных в [settings.py](https://github.com/Alice8080/mybibliography.ru/blob/f9e22ba51db9bc5075af0d3c8b341f22209cbbb1/main/settings.py#L94).
 
 Приложение использует библиотеку django_remote_forms, устаревший синтаксис которой может вызвать ошибки. Чтобы исправить их, используйте следующие команды:
 
