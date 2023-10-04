@@ -1,21 +1,21 @@
 const dataSources = (sources) => {
     const data = {
-        labels: ['2022', 'сейчас'],
+        labels: ['2022', '2023'],
         datasets: [
             {
                 label: 'Книги',
-                data: [41441, sources.books],
+                data: [41441, Number(sources.books) - 41441],
                 backgroundColor: [
-                    '#FF753E',
+                    '#f53838',
                 ],
                 hoverBackgroundColor: [
-                    '#FF753E',
+                    '#f53838',
                 ],
                 borderRadius: 10,
             },
             {
                 label: 'Сайты',
-                data: [40409, sources.sites],
+                data: [40409, Number(sources.sites) - 40409],
                 backgroundColor: [
                     '#F3645B',
                 ],
@@ -26,7 +26,7 @@ const dataSources = (sources) => {
             },
             {
                 label: 'Статьи с сайтов',
-                data: [24859, sources.site_articles],
+                data: [24859, Number(sources.site_articles) - 24859],
                 backgroundColor: [
                     '#E55C8C',
                 ],
@@ -37,7 +37,7 @@ const dataSources = (sources) => {
             },
             {
                 label: 'Статьи из журналов',
-                data: [27835, sources.magazine_articles],
+                data: [27835, Number(sources.magazine_articles) - 27835],
                 backgroundColor: [
                     '#C349FF',
                 ],
@@ -48,7 +48,7 @@ const dataSources = (sources) => {
             },
             {
                 label: 'Остальные источники',
-                data: [44117, sources.others],
+                data: [44117, Number(sources.others) - 44117],
                 backgroundColor: [
                     '#801DFF',
                 ],

@@ -1,32 +1,56 @@
 // Colors 
-$color_bg: #0E0E10;
-$color_bg_dark: #090909;
-$color_bg_light: #101010;
 
-$color_main: rgba(255, 255, 255, 0.8);
-$color_secondary: #7C7C7C; 
-$color_placeholder: #5e5e5e;
-$color_tertiary: #4A4A4A;
+:root {
+    --title-color: #0b132a;
+    --main-color: #545b69;
+    --secondary-color: #71747a;
+    --tertiary-color: #a3aab6;
+    --bg-color: #ffffff;
+    --bg-secondary-color: #f8f8f8;
+    --bg-light-color: #fff3f3;
+    --accent-color: #f53838;
+    --dark-lines-color: #bcbcbc;
+    --light-lines-color: #ffbaba;
+    --shadow-color: rgba(13, 16, 37, 0.06);
+    --accent-shadow-color: #f53838;
+    --hover-color: #d9d9d9;
+    --hover-btn-color: rgba(245, 56, 85, 0.08);
+    --invert: invert(100%);
+}
 
-$color_light_lines: #232323;
-$color_dark_lines: #171717;
-
-$color_gradient: linear-gradient(87.49deg, #FF753E 18.01%, #F3645B 44.53%, #E55C8C 78.06%, #C349FF 98.7%);
-$color_special_gradient: linear-gradient(332.51deg, #FF6B31 -24.21%, #ff6b31 -5.29%, rgba(250, 104, 55, 0.79) 2.49%, rgba(135, 38, 183, 0.761) 56.28%, rgba(152, 250, 255, 0.818) 91.15%, rgb(152, 250, 255) 100.75%);
-$color_highlight: #FD905A;
-$color_special: #FF753E;
+$white: #FFFFFF;
+$title-color: var(--title-color);
+$main-color: var(--main-color);
+$secondary-color: var(--secondary-color);
+$tertiary-color: var(--tertiary-color);
+$bg-color: var(--bg-color);
+$bg-secondary-color: var(--bg-secondary-color);
+$bg-light-color: var(--bg-light-color);
+$accent-color: var(--accent-color);
+$dark-lines-color: var(--dark-lines-color);
+$light-lines-color: var(--light-lines-color);
+$shadow-color: var(--shadow-color);
+$accent-shadow-color: var(--accent-shadow-color);
+$hover-color: var(--hover-color);
+$hover-btn-color: var(--hover-btn-color);
+$invert: var(--invert);
+$invert: var(--invert);
+$color_highlight: #f53838;
+$color_special: #f53838;
 $color_danger: #ec3f3f;
-
-$color_chart_1: $color_special;
+$color_chart_1: $accent-color;
 $color_chart_2: #F3645B;
 $color_chart_3: #E55C8C;
 $color_chart_4: #C349FF;
 $color_chart_5: #801DFF;
 
 // Breakpoints
-$xxl: 1400px; 
-$xl: 1200px; 
-$lg: 992px; 
-$md: 768px; 
-$sm: 576px; 
-$xs: 480px; 
+
+$xxl: 1400px;
+$xl: 1200px;
+$lg: 992px;
+$md: 768px;
+$sm: 576px;
+$xs: 480px;
+
+$layout-width: 80%;

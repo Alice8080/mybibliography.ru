@@ -1,0 +1,50 @@
+@import "../../styles/styles.scss";
+
+.sidebar {
+    &__close {
+        margin: 0 0 auto auto;
+
+        svg {
+            color: $main-color;
+            width: 27px;
+            height: 27px;
+        }
+    }
+
+    &__item {
+        background-color: $bg-color;
+        margin: 5px 0;
+
+        svg {
+            color: $secondary-color;
+            width: 30px;
+            height: 30px;
+        }
+
+        a {
+            font-weight: 400;
+            width: 100%;
+        }
+    }
+
+    hr {
+        color: $main-color;
+    }
+}
+
+
+@media (max-width: $sm) {
+    .sidebar {
+        &__item {
+            svg {
+                width: 28px;
+                height: 28px;
+            }
+
+            a {
+                font-size: 15px;
+            }
+        }
+
+    }
+}

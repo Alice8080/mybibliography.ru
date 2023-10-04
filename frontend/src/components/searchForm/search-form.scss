@@ -8,53 +8,56 @@
     align-items: center;
     justify-content: flex-start;
     padding: 0;
-    margin: 0 0 25px 0;
+    position: relative;
+    margin-bottom: 50px;
 
     &__field {
-        width: 60%;
+        position: relative;
+        width: 55%;
         display: flex;
         justify-content: space-between;
         align-items: center;
+        height: fit-content;
 
         input {
-            font-size: 17px;
-            height: 60px;
-            width: 100%;
-            background-color: initial;
-            border-radius: 20px;
-            padding: 0 20px;
-            color: $color_main;
-            border: 1px solid transparent;
-            background-image: linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 0)), $color_gradient;
-            background-origin: border-box;
-            background-clip: content-box, border-box;
-            box-shadow: 0 1000px #00000000 inset;
-            -webkit-box-shadow: 0 1000px #00000000 inset;
+            @include block-accent();
+            padding-right: 15px;
             margin: 0;
             appearance: none;
             -webkit-appearance: none;
+            width: 93%;
 
             &::placeholder {
-                font-size: 17px;
                 appearance: none;
                 -webkit-appearance: none;
-                color: $color_main;
-                opacity: .7;
+                color: $white;
             }
         }
     }
+
     &__button {
-        @include secondary-button(24px);
-        width: 60px;
-        height: 52px;
-        color: $color_main;
+        height: 50px;
+        width: 50px;
+        padding: 0;
+        margin: 0 5px;
+        color: $main-color;
+        background-color: $bg-color;
+
         svg {
             margin: 0;
-            font-size: 27px;
+            width: 28px;
+            height: 28px;
+            color: $main-color;
         }
-        padding: 0;
-        margin: 0 15px;
-        color: $color_main;
+    }
+
+    &__error {
+        position: absolute;
+        top: -70%;
+        left: 0;
+        font-size: 15px;
+        margin: 10px 0 0 10px;
+        color: $secondary-color;
     }
 }
 
@@ -71,9 +74,6 @@
         &__button {
             padding: 0;
             margin: 0 15px;
-            @include secondary-button(20px);
-            width: 55px;
-            height: 48px;
 
             svg {
                 margin: 0;
@@ -96,27 +96,34 @@
 @media (max-width: $xs) {
     .search-form {
         &__field {
+            width: 100%;
             input {
-                font-size: 16px;
-                height: 54px;
-                border-radius: 16px;
-                padding: 0 16px;
-
-                &::placeholder {
-                    font-size: 16px;
-                }
+                border-radius: 10px;
+                height: 70px;
+                padding-bottom: 25px;
+                font-size: 14px;
             }
+            input::placeholder {
+                font-size: 14px;
+                white-space: wrap;
+            }
+    
         }
+
         &__button {
-            @include secondary-button(18px);
-            width: 55px;
-            height: 45px;
+            padding: 0;
+            margin: 0;
+            margin-left: 8px;
             svg {
                 margin: 0;
                 font-size: 24px;
             }
-            padding: 0;
-            margin: 0 12px;
         }
+
+        &__error {
+            position: absolute;
+            top: -50%;
+        }
+
     }
 }

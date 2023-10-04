@@ -5,29 +5,27 @@
         margin: 20px 0;
         padding: 20px 50px;
         background-color: initial;
-        border: 1px solid transparent;
-        background-image: linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 0)), $color_gradient;
-        background-origin: border-box;
-        background-clip: content-box, border-box;
-        -webkit-box-shadow: 0 2000px $color_bg inset;
-        box-shadow: 0 2000px $color_bg inset;
+        border: 1px solid $tertiary-color;
         border-radius: 50px;
         display: flex;
         flex-direction: row;
         align-items: center;
     }
-    &__text {
+    h2 {
         margin: 0 0 20px 0;
-        font-size: 22px;
-        font-weight: 400;
+        font-size: 20px;
+        font-weight: 300;
     }
     &__email {
-        background: $color_gradient;
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
+        color: $accent-color;
         font-weight: 300;
         font-size: 30px;
         margin: 20px 0 0 0;
+        text-decoration: underline;
+        &:hover {
+            color: $accent-color;
+            text-decoration: underline;
+        }
     }
     &__image {
         width: 300px;
@@ -57,7 +55,11 @@
 
 @media (max-width: $md) {
     .contacts {
+        h2 {
+            font-size: 18px;
+        }
         &__block {
+            border-radius: 30px;
             flex-direction: column;
         }
         &__image {

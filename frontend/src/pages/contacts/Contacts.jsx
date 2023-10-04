@@ -1,5 +1,5 @@
 import SEO from '../../components/SEO';
-import chat from '../../assets/images/chat.png';
+import chat from '../../assets/images/chat-img.png';
 import './contacts.scss';
 
 const Contacts = () => {
@@ -12,7 +12,7 @@ const Contacts = () => {
             <div className="contacts__block">
                 <div className="contacts__info">
                     <div className="contacts__text">
-                        <p className="contacts__connection">Связаться с администрацией:</p>
+                        <h2 className="contacts__connection">Связаться с администрацией:</h2>
                         <a className="contacts__email" href="mailto:info@mybibliography.ru">info@mybibliography.ru</a>
                     </div>
                 </div>

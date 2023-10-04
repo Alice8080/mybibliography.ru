@@ -1,9 +1,10 @@
 import { configureStore } from '@reduxjs/toolkit';
 import { apiSlice } from '../api/apiSlice';
 import search from '../components/searchForm/searchSlice';
+import theme from './themeSlice';
 
 /**
- * Конфигурация глобального состояния приложения.
+ * Конфигурация глобального состояния приложения
  */
 
 const stringMiddleware = () => (next) => (action) => {  
@@ -16,7 +17,7 @@ const stringMiddleware = () => (next) => (action) => {
 }
 
 const store = configureStore({
-    reducer: {search, [apiSlice.reducerPath]: apiSlice.reducer},
+    reducer: {search, theme, [apiSlice.reducerPath]: apiSlice.reducer},
     middleware: getDefaultMiddleware => getDefaultMiddleware().concat(stringMiddleware, apiSlice.middleware),
     devTools: process.env.NODE_ENV !== 'production',
 }); 

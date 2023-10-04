@@ -1,0 +1,125 @@
+@import "../../styles/styles.scss";
+
+.links {
+    width: 100%;
+    padding: 40px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    @include block-shadow();
+
+    hr {
+        height: 100%;
+        width: 2px;
+        border-left: 2px solid #b3b5ba;
+        margin: 0 40px;
+    }
+
+    &__left {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        h3 {
+            display: block;
+            color: $main-color;
+            line-height: 160%;
+
+            span {
+                display: block;
+                font-size: 25px;
+                font-style: normal;
+                font-weight: 700;
+                color: $title-color;
+                margin-bottom: 12px;
+                white-space: nowrap;
+            }
+        }
+
+        img {
+            object-fit: contain;
+            width: 55px;
+            margin-right: 36px;
+        }
+    }
+
+    &__right {
+        h3 {
+            font-size: 17px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 117.647%;
+            color: $main-color;
+            margin-bottom: 20px;
+        }
+
+        a {
+            @include primary-outline-button(15px);
+        }
+    }
+
+    &__buttons {
+        display: flex;
+        gap: 15px;
+        flex-wrap: wrap;
+    }
+}
+
+
+@media (max-width: $xl) {
+    .links {
+        flex-direction: column;
+        align-items: flex-start;
+
+        &__left { 
+            margin-bottom: 30px;
+        }
+    }
+}
+
+@media (max-width: $sm) {
+    .links {
+        padding: 30px;
+    
+        hr {
+            height: 100%;
+            width: 2px;
+            border-left: 2px solid #b3b5ba;
+            margin: 0 40px;
+        }
+    
+        &__left {    
+            h3 {    
+                span {
+                    font-size: 22px;
+                    margin-bottom: 8px;
+                }
+            }
+    
+            img {
+                object-fit: contain;
+                width: 45px;
+                margin-right: 20px;
+            }
+        }
+    
+        &__right {
+            h3 {
+                font-size: 16px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: 117.647%;
+                color: $main-color;
+                margin-bottom: 20px;
+            }
+    
+            a {
+                @include primary-outline-button(14px);
+            }
+        }
+    
+        &__buttons {
+            gap: 12px;
+        }
+    }
+}

@@ -1,6 +1,6 @@
-import clock from '../../assets/images/clock.png';
-import fire from '../../assets/images/fire.png';
-import sheild from '../../assets/images/sheild.png';
+import clock from '../../assets/images/clock-img.png';
+import fire from '../../assets/images/fire-img.png';
+import sheild from '../../assets/images/sheild-img.png';
 import './hero-section.scss';
 
 const HeroSection = () => {

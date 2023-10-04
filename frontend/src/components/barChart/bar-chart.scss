@@ -1,8 +1,12 @@
 @import "../../styles/styles.scss";
 
 .bar-chart {
-    width: 60%;
+    width: 70%;
     margin: 0 auto 60px auto;
+
+    canvas {
+        width: 100%;
+    }
     
     @media (max-width: $xl) {
         width: 100%;

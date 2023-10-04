@@ -5,7 +5,7 @@
 
     &__arrow {
         text-align: center;
-        color: $color_secondary;
+        color: $secondary-color;
 
         span,
         svg {
@@ -16,30 +16,33 @@
 
     &__form {
         margin: 20px 0;
-        @include block-outlined-gradient-xl();
+        @include block-xl();
+        border: 1px solid $tertiary-color;
         width: 100%;
     }
 
     &__works {
         display: flex;
         label {
-            @include secondary-button(16px);
+            @include secondary-outline-button(16px);
             margin: 0 10px 10px 0;
             &:has(input:checked) {
-                background-color: $color_light_lines;
+                background-color: $tertiary-color;
+                color: $white;
             }
         }
     }
 
     &__sources-amount {
-        color: $color_secondary;
+        color: $secondary-color;
         font-size: 16px;
-        font-weight: 300;
+        font-weight: 400;
         margin: 20px 0 30px 0;
     }
 
     &__title {
         margin: 0 0 20px 0;
+        font-weight: 400;
     }
 
     &__field {
@@ -73,12 +76,10 @@
             justify-content: space-between;
             align-items: center;
             line-height: 120%;
-            &:nth-child(1), &:nth-child(2) {
-                background-color: $color_dark_lines;
-            }
+            font-weight: 400;
         }
         button {
-            @include secondary-button(16px);
+            @include secondary-outline-button(16px);
             display: inline-flex;
             margin: 0 10px 10px 0;
             text-decoration: underline;
@@ -114,6 +115,11 @@
             font-size: 30px;
         }
     }
+
+    select {
+        background-color: $tertiary-color;
+        color: $white;
+    }
 }
 
 
@@ -121,7 +127,7 @@
     .order {
         &__arrow {
             text-align: center;
-            color: $color_secondary;   
+            color: $secondary-color;   
     
             span,
             svg {
@@ -135,10 +141,10 @@
             justify-content: flex-start;
 
             label {
-                @include secondary-button(15px);
+                @include secondary-outline-button(15px);
                 margin: 0 10px 10px 0;
                 border-radius: 10px;
-                border: 1px solid $color_light_lines;
+                border: 1px solid $light-lines-color;
                 white-space: nowrap;
 
                 &:nth-child(2) {
@@ -152,9 +158,9 @@
         }
         
         &__sources-amount {
-            color: $color_secondary;
+            color: $secondary-color;
             font-size: 16px;
-            font-weight: 300;
+            font-weight: 400;
             margin: 20px 0 30px 0;
         }
     

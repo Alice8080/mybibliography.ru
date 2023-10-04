@@ -106,7 +106,7 @@ const ListView = ({list}) => {
             </div>
             <Link to='/tip-dokumenta' className="list__link">
                 Добавить
-                <Icon icon="system-uicons:plus-circle" />
+                <Icon icon="system-uicons:create" />
             </Link>
         </>
     )

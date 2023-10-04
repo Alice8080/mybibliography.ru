@@ -6,10 +6,10 @@
         word-wrap: break-word;
     }
     &-content, &-header, &-body {
-        color: $color_main;
+        color: $main-color;
     }
     &-header {
-        border-bottom: 1px solid $color_light_lines;
+        border-bottom: 1px solid $dark-lines-color;
         margin-bottom: 10px;
     }
     &-body {
@@ -17,7 +17,7 @@
         line-height: 140%;
     }
     &-footer {
-        border-top: 1px solid $color_light_lines;
+        border-top: 1px solid $dark-lines-color;
         margin-top: 10px;
         padding-top: 20px;
         display: flex;
@@ -43,9 +43,9 @@
     }
 
     a {
-        color: $color_special;
         text-decoration: underline;
         &:hover {
+            color: $title-color;
             text-decoration: underline;
         }
     }

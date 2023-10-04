@@ -1,0 +1,36 @@
+{
+    "light": {
+        "title-color": "#0b132a",
+        "main-color": "#545b69",
+        "secondary-color": "#71747a",
+        "tertiary-color": "#a3aab6",
+        "bg-color": "#ffffff",
+        "bg-secondary-color": "#f8f8f8",
+        "bg-light-color": "#fff3f3",
+        "accent-color": "#f53838",
+        "dark-lines-color": "#bcbcbc",
+        "light-lines-color": "#ffbaba",
+        "shadow-color": "rgba(13, 16, 37, 0.06)",
+        "accent-shadow-color": "#f53838",
+        "hover-color": "#d9d9d9",
+        "hover-btn-color": "rgba(245, 56, 85, 0.08)",
+        "invert": "invert(100%)"
+    },
+    "dark": {
+        "title-color": "#ffffff",
+        "main-color": "#E9E9E9",
+        "secondary-color": "#ffffff",
+        "tertiary-color": "#5f5f5f",
+        "bg-color": "#19191C",
+        "bg-secondary-color": "#232325",
+        "bg-light-color": "#262626",
+        "accent-color": "#F83F3F",
+        "dark-lines-color": "#303030",
+        "light-lines-color": "#6c6c6c",
+        "shadow-color": "rgba(234, 235, 243, 0.05)",
+        "accent-shadow-color": "#FD4444",
+        "hover-color": "#3a3939",
+        "hover-btn-color": "#232325",
+        "invert": "invert(0%)"
+    }
+}

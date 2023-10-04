@@ -1,9 +1,9 @@
 @mixin transition() {
-    transition: all .4s ease-in-out;
+    transition: all .2s ease-in-out;
 }
 
 @mixin text-gradient($font-size, $font-weight) {
-    background: $color_gradient;
+    background: $accent-color;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     font-weight: $font-weight;

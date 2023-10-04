@@ -6,8 +6,8 @@ const SourceTypes = ({sourcesList}) => {
     let sourceTypes = {book: [], electronic: [], article: [], document: [], scientific: []}
     for (let type in sourceTypes) {
         sourcesList.map((source) => {
-            const link = <Link key={source.path} className="type__link" to={`/${source.path}`}>{source.title}</Link>
-            if (source.type === type) {
+            const link = <Link key={source.path} className="type__link" to={`/${source.path}`}>{source.source_title}</Link>
+            if (source.source_type === type) {
                 sourceTypes[type].push(link)
             };
         });
@@ -41,5 +41,5 @@ const SourceTypes = ({sourcesList}) => {
             </section>
         </div>
     )
-};
+}
 export default SourceTypes;

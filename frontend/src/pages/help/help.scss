@@ -1,0 +1,22 @@
+@import "../../styles/styles.scss";
+
+.transformer-form {
+    background-color: #fff;
+    margin: 0 auto;
+
+    input[type="text"],
+    input[type="number"],
+    input[type="email"] {
+        background-color: #fff;
+        border: 1px solid #bcbcbc;
+        color: #000;
+
+        &:focus {
+            border-color: #0f61fe
+        }
+    }
+
+    label[for="pp-checkbox-6bcfb75"] {
+        color: #71747a;
+    }
+}

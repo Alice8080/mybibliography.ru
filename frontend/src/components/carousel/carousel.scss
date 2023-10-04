@@ -17,10 +17,17 @@
     a, button {
         &:focus-visible {
             transition: none;
-            outline: solid $color_main 2px;
+            outline: solid $main-color 2px;
         }
     }
 }
+
+
+.carousel-control-next-icon, .carousel-control-prev-icon, .carousel-indicators button {
+    filter: $invert;
+    -webkit-filter: $invert;
+}
+
 
 @media (max-width: $xs) {
     .carousel {

@@ -1,5 +1,5 @@
 import Navbar from 'react-bootstrap/Navbar';
-import logo from '../../assets/images/logo.png';
+import logo from '../../assets/images/logoIcon.png';
 import './logo.scss';
 const Logo = () => {
     return (

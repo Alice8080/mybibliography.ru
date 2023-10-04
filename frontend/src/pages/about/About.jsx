@@ -22,7 +22,7 @@ const About = () => {
             <DoughnutChart dataPercents={dataPercents} />
             <hr className="about__line line line-md" />
             <p className="about__text-xl">
-                В среднем в сутки через сайт оформляется <span>около 800</span> библиографических ссылок
+                В среднем в сутки через сайт оформляется <span>около 1000</span> библиографических ссылок
             </p>
             <BarChart data={dataSources(response?.data?.sources ?? {})} />
             <hr className="about__line line line-md" />

@@ -1,4 +1,4 @@
-import { createSlice, createEntityAdapter } from '@reduxjs/toolkit'
+import { createSlice, createEntityAdapter } from '@reduxjs/toolkit';
 
 const searchAdapter = createEntityAdapter();
 const initialState = searchAdapter.getInitialState({

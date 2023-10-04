@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
@@ -103,8 +103,7 @@ const SourceView = ({sourceInfo}) => {
   const validation = () => {
     let fields = {};
     for (let field of sourceFields) { 
-      const optionals = ['edit_info', 'isbn', 'issn', 'publication_date', 'volume_n'];
-      if (field.isRequired === 'required' && !optionals.some((optionalField) => field.name === optionalField))  {
+      if (field.isRequired === 'required' && field.name !== 'edit_info' && field.name !== 'isbn' && field.name !== 'issn' && field.name !== 'publication_date' && field.name !== 'volume_n')  {
         fields = {...fields, [field.name]: Yup.string().required('Это обязательное поле')};
       }
     }
@@ -153,6 +152,7 @@ const SourceView = ({sourceInfo}) => {
           {authorsButtons}
           {optionalFieldsButton}
       </div>
+      
       <Formik
           initialValues={initialValues()}
           validationSchema={validation()}
@@ -169,5 +169,7 @@ const SourceView = ({sourceInfo}) => {
       </Formik>
     </>
   )
-};
+}
+
+
 export default SourceView;

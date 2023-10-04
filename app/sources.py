@@ -65,7 +65,7 @@ SOURCES = {
         'type': 'book',
         'path': 'mnogotomnoe-izdanie'
     },
-    'volume': { 
+    'volume': {
         'name': 'volume',
         'model': Volume,
         'form': VolumeForm,

@@ -8,19 +8,20 @@
     }
     &__data {
         width: 60%;
-        border-right: 1px solid $color_light_lines;
+        border-right: 1px solid $light-lines-color;
     }
     &__orders {
         width: 35%;
         
         button {
             &:focus {
-                background-color: $color_light_lines;
+                background-color: $light-lines-color;
             }
         }
     }
     h3 {
         font-size: 18px;
+        font-weight: 500;
     }
     &__data {
         display: flex;
@@ -59,7 +60,7 @@
     }
 
     &__lists {
-        border-bottom: 1px solid $color_light_lines;
+        border-bottom: 1px solid $light-lines-color;
         padding-bottom: 20px;
         margin-bottom: 30px;
     }
@@ -85,7 +86,7 @@
             width: 100%;
         }
         &__requests {
-            border-bottom: 1px solid $color_light_lines;
+            border-bottom: 1px solid $light-lines-color;
             padding-bottom: 20px;
             margin-bottom: 30px;
         }

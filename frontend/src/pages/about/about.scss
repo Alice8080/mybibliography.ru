@@ -12,7 +12,7 @@
             font-weight: 400;
             font-size: 40px;
             line-height: 135%;
-            color: $color_main;
+            color: $main-color;
             margin: 90px 0 80px 0;
         
             @media (max-width: $xl) {
@@ -35,24 +35,24 @@
             }
         
             span {
-                color: $color_special;
+                color: $accent-color;
             }
         }
         &-md {
             margin: 0 auto;
             text-align: center;
             font-size: 17px;
-            color: $color_secondary;
+            color: $secondary-color;
             line-height: 130%;
             a {
-                color: $color_special;
+                color: $accent-color;
             }
         }
     }
     &__github {
         margin: 40px auto 0 auto;
         text-align: center;
-        color: $color_main;
+        color: $main-color;
         font-size: 17px;
         line-height: 130%;
         word-break: keep-all;
@@ -60,7 +60,7 @@
             margin-top: 10px;
             display: block;
             font-size: 16px;
-            color: $color_secondary;
+            color: $secondary-color;
         }
         svg {
             font-size: 30px;
@@ -76,6 +76,14 @@
             font-size: 40px;
             margin: 0 10px 0 0;
         }
+    }
+
+    &__line {
+        margin: 50px 0;
+    }
+
+    hr {
+        color: $tertiary-color;
     }
 }
 

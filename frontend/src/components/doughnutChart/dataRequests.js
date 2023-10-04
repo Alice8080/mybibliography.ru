@@ -1,15 +1,15 @@
 const dataRequests = (requests) => {
     const data = {
-        labels: ['2022', 'сейчас'],
+        labels: ['2022', '2023'],
         datasets: [
             {
                 label: 'Поисковые запросы',
-                data: [78640, requests],
+                data: [78640, Number(requests) - 78640],
                 backgroundColor: [
-                    '#FF753E',
+                    '#f53838',
                 ],
                 hoverBackgroundColor: [
-                    '#FF753E',
+                    '#f53838',
                 ],
                 borderRadius: 10,
             },

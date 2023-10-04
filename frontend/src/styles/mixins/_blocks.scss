@@ -1,15 +1,18 @@
+@import "../vars";
+
 @mixin block-sm() {
     width: fit-content;
     height: fit-content;
     padding: 12px 16px;
     border-radius: 10px;
-    color: $color_main;
+    color: $main-color;
     font-weight: 300;
 
     @media (max-width: $md) {
         padding: 10px 14px;
         border-radius: 8px;
     }
+
     @media (max-width: $xs) {
         padding: 8px 12px;
         border-radius: 8px;
@@ -21,13 +24,14 @@
     height: fit-content;
     padding: 20px;
     border-radius: 20px;
-    color: $color_main;
+    color: $main-color;
     font-weight: 300;
 
     @media (max-width: $md) {
         padding: 18px;
         border-radius: 8px;
     }
+
     @media (max-width: $xs) {
         padding: 16px;
         border-radius: 8px;
@@ -37,16 +41,16 @@
 @mixin block-xl() {
     width: fit-content;
     height: fit-content;
-    padding: 40px; 
+    padding: 40px;
     border-radius: 30px;
-    color: $color_main;
+    color: $main-color;
     font-weight: 300;
 
     @media (max-width: $xl) {
         padding: 30px;
         border-radius: 25px;
     }
-    
+
     @media (max-width: $sm) {
         padding: 20px;
         border-radius: 20px;
@@ -54,8 +58,46 @@
 }
 
 @mixin block-gray() {
-    border: 1px solid $color_light_lines;
-    background-color: $color_bg_light;
+    border: 1px solid $dark-lines-color;
+    background-color: $bg-color;
+}
+
+@mixin block-outlined-gray {
+    border: 1px solid $dark-lines-color;
+}
+
+@mixin block-outlined() {
+    border: 1px solid $accent-color;
+    background-color: $bg-color;
+}
+
+@mixin block-shadow() {
+    border-radius: 10px;
+    background-color: $bg-color;
+    position: relative;
+    box-shadow: 0px 30px 110px 0px $shadow-color;
+}
+
+@mixin block-accent() {
+    border-radius: 10px;
+    padding: 18px 26px;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 156.25%;
+    white-space: nowrap;
+    background-color: $accent-color;
+    color: $white;
+    position: relative;
+    box-shadow: 0px 35px 45px -15px rgba(245, 56, 56, 0.40);
+
+    @media (max-width: $md) {
+        padding: 14px 18px;
+    }
+
+    @media (max-width: $sm) {
+        padding: 12px 16px;
+    }
 }
 
 @mixin block-gray-sm() {
@@ -73,11 +115,6 @@
     @include block-gray();
 }
 
-
-@mixin block-outlined-gray {
-    border: 1px solid $color_light_lines;
-}
-
 @mixin block-outlined-gray-sm() {
     @include block-sm();
     @include block-outlined-gray;
@@ -93,32 +130,7 @@
     @include block-outlined-gray;
 }
 
-@mixin block-gradient() {
-    z-index: 1;
-    background-color: initial;
-    border: 1px solid transparent;
-    background-image: linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 0)), $color_gradient;
-    background-origin: border-box;
-    background-clip: content-box, border-box;
-    -webkit-box-shadow: 0 3000px $color_bg inset;
-    box-shadow: 0 3000px $color_bg inset;
-    -webkit-transition: -webkit-box-shadow .4s ease;
-    transition: -webkit-box-shadow .4s ease;
-    transition: box-shadow .4s ease;
-    transition: box-shadow .4s ease, -webkit-box-shadow .4s ease;
-}
-
-@mixin block-outlined-gradient-sm() {
-    @include block-sm();
-    @include block-gradient();
-}
-
-@mixin block-outlined-gradient-md() {
-    @include block-md();
-    @include block-gradient();
-}
-
-@mixin block-outlined-gradient-xl() {
+@mixin block-outlined-xl() {
     @include block-xl();
-    @include block-gradient();
+    @include block-outlined;
 }

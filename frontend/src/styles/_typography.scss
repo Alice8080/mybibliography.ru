@@ -8,16 +8,16 @@
     }
 }
 
-@include font-face("Mulish", "Mulish-ExtraLight", 200, normal);
-@include font-face("Mulish", "Mulish-Light", 300, normal);
-@include font-face("Mulish", "Mulish-Regular", 400, normal);
-@include font-face("Mulish", "Mulish-Medium", 500, normal);
-@include font-face("Mulish", "Mulish-SemiBold", 600, normal);
-@include font-face("Mulish", "Mulish-Bold", 700, normal);
-@include font-face("Mulish", "Mulish-ExtraBold", 800, normal);
-@include font-face("Mulish", "Mulish-Black", 900, normal);
+@include font-face("Rubik", "Rubik-Light", 300, normal);
+@include font-face("Rubik", "Rubik-Regular", 400, normal);
+@include font-face("Rubik", "Rubik-Medium", 500, normal);
+@include font-face("Rubik", "Rubik-SemiBold", 600, normal);
+@include font-face("Rubik", "Rubik-Bold", 700, normal);
+@include font-face("Rubik", "Rubik-ExtraBold", 800, normal);
+@include font-face("Rubik", "Rubik-Black", 900, normal);
 
-$font_main: 'Mulish', sans-serif;
+
+$font_main: 'Rubik', sans-serif;
 
 * {
     font-family: $font_main;
@@ -28,62 +28,67 @@ h1 {
     font-weight: 400;
     font-size: 36px;
     line-height: 135%;
-    color: $color_main;
+    color: $title-color;
     margin: 0 0 25px 0;
 
     @media (max-width: $xl) {
         font-size: 36px;
         margin: 0 0 25px 0;
     }
-    
+
     @media (max-width: $lg) {
         font-size: 36px;
         margin: 0 0 20px 0;
     }
-    
+
     @media (max-width: $md) {
         font-size: 32px;
         margin: 0 0 20px 0;
     }
+
     @media (max-width: $sm) {
         font-size: 28px;
     }
-    
+
     @media (max-width: $xs) {
         font-size: 28px;
     }
 }
 
 
-h2, h4, h5, h6 {    
-    font-style: normal;
-    font-weight: 300;
-    font-size: 17px;
-    line-height: 140%;
-    color: $color_secondary;
+h2,
+h4,
+h5,
+h6 {
     margin: 0 0 30px 0;
+    font-size: 17px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 162.5%;
+    color: $main-color;
 
     @media (max-width: $md) {
         font-size: 16px;
         line-height: 130%;
     }
+
     @media (max-width: $xs) {
         line-height: 150%;
-    }    
+    }
 }
 
-h3 {    
+h3 {
     font-style: normal;
     font-weight: 300;
     font-size: 17px;
     line-height: 125%;
-    color: $color_main;
-    
+    color: $main-color;
+
     @media (max-width: $md) {
         font-size: 16px;
         line-height: 130%;
     }
-    
+
     @media (max-width: $xs) {
         line-height: 150%;
     }
@@ -92,19 +97,21 @@ h3 {
 p {
     font-size: 16px;
     font-weight: 300;
-    color: $color_main;
+    color: $main-color;
 }
 
 a {
-    color: $color_main;
+    color: $main-color;
     font-weight: 300;
+
     &:hover,
     &:active {
-        color: #ffffff;
+        color: $main-color;
+        text-decoration: underline;
     }
 
     &:focus-visible {
         transition: none;
-        outline: solid $color_main 2px;
+        outline: solid $main-color 2px;
     }
 }

@@ -6,7 +6,6 @@ const {headers, credentials} = {
     headers: {'Content-Type': 'application/json', "X-CSRFToken": cookies.get('csrftoken')},
     credentials: "same-origin"
 };
-
 /**
  * Конфигурация асинхронных запросов к API сайта для получения данных с сервера 
  * и преобразовывания этих данных для рендеринга компонентов, использующих полученные данные.
@@ -14,7 +13,7 @@ const {headers, credentials} = {
 
 export const apiSlice = createApi({
     reducerPath: 'api', 
-    baseQuery: fetchBaseQuery({baseUrl: 'http://localhost:8000/api/'}), // localhost указан только для локального запуска приложения
+    baseQuery: fetchBaseQuery({baseUrl: 'https://mybibliography.ru/api/'}), 
     tagTypes: ['Sources', 'List', 'User', 'Statistics'], 
     endpoints: builder => ({  
         getSources: builder.query({ 
@@ -28,8 +27,8 @@ export const apiSlice = createApi({
                 credentials
             }),
             transformResponse: (source) => ({
-                sourceTitle: source.title,
-                sourceName: source.name,
+                sourceTitle: source.source_title,
+                sourceName: source.source_name,
                 sourceHaveAuthors: source.fields.some((field) => field.name === 'third_surname'),
                 sourceHaveOptionals: source.fields.some((field) => field.isRequired === 'optional'),
                 sourceFields: source.fields

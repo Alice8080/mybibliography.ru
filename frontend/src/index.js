@@ -10,7 +10,7 @@ root.render(
   <React.StrictMode>
     <Provider store={store}>
       <CookiesProvider>
-        <App />
+          <App />
       </CookiesProvider>
     </Provider>
   </React.StrictMode>

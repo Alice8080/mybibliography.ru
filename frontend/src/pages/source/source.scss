@@ -19,8 +19,8 @@
     &__nav {
         @include button_group(12px 17px, 10px, 16px);
         button.active {
-            color: $color_main;
-            background-color: $color_light_lines;
+            color: $main-color;
+            background-color: $dark-lines-color;
         }
     }
 
@@ -31,10 +31,11 @@
 
     &__button {
         margin: 10px auto 0 auto;
-        @include primary-outlined-button(16px);
-        font-weight: 300;
+        @include primary-outline-button(16px);
+        display: flex;
+        
         svg {
-            font-size: 22px;
+            font-size: 25px;
             margin: 0 0 0 10px;
         }
     }
@@ -61,7 +62,7 @@
                 width: 100%;
                 font-weight: 300;
                 font-size: 16px;
-                color: $color_secondary;
+                color: $secondary-color;
             }
         }
         &:has(input[id="editor"])::after {
@@ -69,6 +70,12 @@
         } 
         &:has(input[id="third_initials_3"])::after {
             content: "Остальные авторы не указываются.";
+        }
+
+        input {
+            &::placeholder {
+                color: $tertiary-color;
+            }
         }
     }
 }
@@ -112,7 +119,7 @@
                 @include secondary-button(15px);
                 margin: 0 10px 10px 0;
                 border-radius: 10px;
-                border: 1px solid $color_light_lines;
+                border: 1px solid $dark-lines-color;
 
                 &:first-child {
                     border-radius: 10px;

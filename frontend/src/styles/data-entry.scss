@@ -6,7 +6,7 @@ input {
         -webkit-appearance: none;
         margin: 0;
     }
-    &[type=number] {
+    &[type=number], #amount {
         -moz-appearance: textfield;
     }
     &:-webkit-autofill,
@@ -19,26 +19,27 @@ input {
 }
 input[type=text], 
 input[type=number],
+#amount,
 input[type=email],
 textarea {
     font-style: normal;
-    font-weight: 300;
-    color: $color_main;
-    background-color: $color_bg;
-    border: 1px solid $color_light_lines;
+    font-weight: 400;
+    color: $main-color;
+    background-color: $bg-color;
+    border: 1px solid $dark-lines-color;
     border-radius: 8px;
     font-size: 16px;
     padding: 10px;
     &::placeholder {
-        color: $color_placeholder;
+        color: $tertiary-color;
     }
     &:focus {
-        border: 1px solid $color_secondary;
+        border: 1px solid $secondary-color;
     }
     &:disabled {
-        border: 1px solid $color_light_lines;
+        border: 1px solid $dark-lines-color;
         &::placeholder {
-            color: $color_tertiary;
+            color: $tertiary-color;
         }
     }
     @media (max-width: $sm) {
@@ -60,9 +61,6 @@ input[type=search] {
     &:active {
         outline: none;
     }
-    &:focus-visible {
-        outline: 2px solid #ffffff91;
-    }
 
     &::-webkit-search-cancel-button {
         -webkit-appearance: none;
@@ -72,6 +70,7 @@ input[type=search] {
         background-size: contain;
         opacity: 0;
         pointer-events: none;
+        cursor: pointer;
     }
     
     &:focus::-webkit-search-cancel-button {
@@ -93,12 +92,12 @@ textarea {
 
 label {
     font-style: normal;
-    font-weight: 300;
+    font-weight: 400;
     font-size: 16px;
     line-height: 120%;
-    color: $color_main;
+    color: $secondary-color;
     &:has(~ :is([disabled])) {
-        color: $color_secondary; 
+        color: $secondary-color; 
     } 
     @media (max-width: $sm) {
         font-size: 15px;
@@ -108,13 +107,14 @@ label {
 .input-error {
     display: block;
     font-size: 15px;
-    font-weight: 300;
+    font-weight: 400;
     line-height: 120%;
     color: $color_danger;
     @media (max-width: $sm) {
         font-size: 14px;
     } 
 }
+
 
 input[type=checkbox] {
     z-index: -1;
@@ -135,7 +135,7 @@ input[type=checkbox]+label::before {
     height: 1em;
     flex-shrink: 0;
     flex-grow: 0;
-    border: 1px solid $color_secondary;
+    border: 1px solid $secondary-color;
     border-radius: 4px;
     margin-right: 15px;
     background-repeat: no-repeat;
@@ -144,42 +144,40 @@ input[type=checkbox]+label::before {
 }
 
 input[type=checkbox]:not(:disabled):not(:checked)+label:hover::before {
-    border-color: #ff9e77;
+    border-color: #ff7777;
 }
 
 input[type=checkbox]:not(:disabled):active+label::before {
-    background-color: #ff9e77;
-    border-color: #ff9e77;
+    background-color: #ff7777;
+    border-color: #ff7777;
 }
 
 input[type=checkbox]:focus+label::before {
-    box-shadow: 0 0 0 0.2rem rgba(205, 112, 13, 0.25);
+    box-shadow: 0 0 0 0.2rem rgba(205, 13, 13, 0.25);
 }
 
 input[type=checkbox]:focus:not(:checked)+label::before {
-    border-color: #ff9e77;
+    border-color: #ff7777;
 }
 
 input[type=checkbox]:checked+label::before {
-    border-color: #ff6529;
-    background-color: #ff6529;
+    border-color: $accent-color;
+    background-color: $accent-color;
     background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3e%3cpath fill='%23fff' d='M6.564.75l-3.59 3.612-1.538-1.55L0 4.26 2.974 7.25 8 2.193z'/%3e%3c/svg%3e");
 }
 
 input[type=checkbox]:disabled+label::before {
-    background-color: #ff9e77;
+    background-color: #ff7777;
 }
 
 select {
     margin-top: 12px;
-    background-color: $color_dark_lines;
-    color: $color_main;
     padding: 5px;
     border: unset;
     display: block;
     padding: 0.375rem 2.25rem 0.375rem 0.75rem;
     -moz-padding-start: calc(0.75rem - 3px);
-    font-weight: 300;
+    font-weight: 400;
     line-height: 1.5;
     background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23343a40' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/%3e%3c/svg%3e");
     background-repeat: no-repeat;
@@ -192,6 +190,6 @@ select {
     appearance: none;
     text-transform: none;
     &:focus, &:active, &:focus-visible {
-        outline: solid $color_tertiary 2px;
+        outline: solid $tertiary-color 2px;
     }
 }

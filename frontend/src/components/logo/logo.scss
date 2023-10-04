@@ -1,40 +1,43 @@
 @import "../../styles/styles.scss";
 
 .logo {
-    opacity: 0.9;
     display: flex;
     align-items: center;
     padding: 7px;
+
     &__text {
         white-space: nowrap;
         margin: 0 0 0 18px;
+        font-size: 20px;
         font-style: normal;
-        font-weight: 400;
-        font-size: 18px;
-        font-family: $font_main;
-        color: $color_main;
+        font-weight: 500;
+        line-height: normal;
+        color: $title-color;
+
         &:hover {
-            color: $color_main;
+            color: $title-color;
         }
     }
+
     &__img {
         object-fit: contain;
-        width: 28px;
+        width: 32px;
     }
+
     &:focus-visible {
         border-radius: 8px;
-        outline: solid $color_main 2px;
+        outline: solid $title-color 2px;
     }
 }
 
 
-@media (max-width: $lg) {  
+@media (max-width: $lg) {
     .logo {
         &__text {
             margin: 0 0 0 15px;
             font-size: 17px;
         }
-    
+
         &__img {
             width: 27px;
         }
@@ -47,7 +50,7 @@
             margin: 0 0 0 13px;
             font-size: 16px;
         }
-    
+
         &__img {
             width: 25px;
         }

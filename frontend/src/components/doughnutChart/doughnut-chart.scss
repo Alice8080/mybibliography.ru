@@ -22,7 +22,7 @@
         }
         p {
             margin-top: 5px;
-            color: $color_secondary;
+            color: $secondary-color;
             font-weight: 400;
             font-size: 20px;
             line-height: 30px;
@@ -87,7 +87,7 @@
 .canvas {
     width: 80%;
     height: 50px;
-    background-color: $color_bg;
+    background-color: $bg-color;
 }
 
 @media (max-width: 1200px) {
@@ -138,7 +138,7 @@
             }
             p {
                 margin-top: 10px;
-                color: $color_secondary;
+                color: $secondary-color;
                 font-weight: 400;
                 font-size: 18px;
                 line-height: 16px;
@@ -161,7 +161,7 @@
                 margin-bottom: 30px;
             }
             p {
-                color: $color_secondary;
+                color: $secondary-color;
                 font-weight: 400;
                 font-size: 13px;
                 line-height: 16px;

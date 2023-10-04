@@ -1,9 +1,11 @@
 import { useState } from 'react';
 import Modal from 'react-bootstrap/Modal';
 import { Icon } from '@iconify/react';
+import { useSelector } from "react-redux";
 import './modal.scss';
 
 const CustomModal = ({settings}) => {
+  const { theme } = useSelector(state => state.theme);
   const [show, setShow] = useState(false);
   const {buttonClassName, text, icon} = settings.buttonSettings;
   const {title, content, buttons} = settings.contentSettings;
@@ -16,7 +18,7 @@ const CustomModal = ({settings}) => {
         {icon != '' ? <Icon icon={icon} /> : null}
       </button>
       <Modal show={show} onHide={closeModal}>
-        <Modal.Header closeButton closeVariant='white'>
+        <Modal.Header closeButton closeVariant={theme === 'light' ? 'black' : 'white'}>
           <Modal.Title>{title}</Modal.Title>
         </Modal.Header>
         <Modal.Body>{content()}</Modal.Body>

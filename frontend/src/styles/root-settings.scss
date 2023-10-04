@@ -1,3 +1,5 @@
+@import "vars.scss";
+
 * {
     padding: 0;
     margin: 0;
@@ -28,7 +30,8 @@ body {
 }
 
 body {
-    background-color: $color_bg;
+    background-color: $bg-color;
+    scrollbar-gutter: stable;
 }
 
 nav,
@@ -55,6 +58,7 @@ a:active {
     text-decoration: none;
 }
 
+
 ul li {
     list-style: none;
 }
@@ -71,50 +75,16 @@ img {
     vertical-align: top;
 }
 
-::selection {
-    background: $color_special;
-}
-
-::-moz-selection {
-    background: $color_special;
-}
-
-
-::-webkit-scrollbar {
-    width: 8px;
-}
-
-::-webkit-scrollbar-track {
-    border-radius: 100px;
-}
-
-::-webkit-scrollbar-thumb {
-    background-color: $color_light_lines;
-    border-radius: 100px;
-}
-
-body {
-    scrollbar-width: 5px;
-    overflow-y: scroll;
-    scrollbar-color: $color_light_lines $color_light_lines;
-}
-
-@media(orientation: portrait) {
-    ::-webkit-scrollbar {
-        width: 6px;
-    }
-}
-
 .wrapper {
     min-height: 100vh;
     display: -ms-grid;
     display: grid;
     justify-content: center;
     align-content: space-between;
-    grid-template: minmax(100px, auto) 1fr minmax(60px, 80px)/1fr;
+    grid-template: minmax(100px, auto) 1fr minmax(auto, auto)/1fr;
     grid-template-areas: "header"
-                         "main"
-                         "footer";
+        "main"
+        "footer";
 }
 
 .header {
@@ -124,8 +94,14 @@ body {
 .main {
     grid-area: main;
     margin: 0 auto;
-    width: 85%;
+    width: $layout-width;
+    padding-top: 30px;
+
+    @media (max-width: $sm) {
+        padding-top: 20px;
+    }
 }
+
 .footer {
     grid-area: footer;
     width: 100%;

@@ -1,12 +1,9 @@
 # My Bibliography
 
-[mybibliography.ru](https://mybibliography.ru/) – сайт для поиска источников для научных и учебных работ и оформления ссылок на источники по ГОСТ. 
-
-## Описание
+[mybibliography.ru](https://mybibliography.ru/) – сайт для поиска источников для научных и учебных работ и оформления ссылок на источники по ГОСТ. Цель проекта — сделать поиск информации простым и эффективным, а работу с источниками — доступной и удобной. 
 
 ![My Bibliography](/readme_assets/home.png)
 
-Цель проекта — сделать поиск информации простым и эффективным, а работу с источниками — доступной и удобной. 
 
 ## Технологии
 
@@ -61,11 +58,9 @@
 
 Когда база данных оформленных ссылок превысила 100 000, в проект добавилась функция поиска по ней. Поиск проводится по ключевым словам запроса, исключая предлоги, союзы, междометия. Так как по некоторым запросам результатов может быть очень много, в целях оптимизации рендеринга найденные библиографические ссылки выводятся по 100 за раз с возможностью подгрузки оставшихся до тех пор, пока все результаты по поисковому запросу не будут загружены целиком.  
 
-![Поиск](/readme_assets/search.png)
-
 Воспользоваться функцией поиска можно на [главной странице сайта](https://mybibliography.ru), либо на [странице поиска](https://mybibliography.ru/search) 
 
-![Результаты поиска](/readme_assets/search_results.png)
+![Поиск](/readme_assets/search.png)
 
 ### Списки литературы на заказ
 
@@ -97,96 +92,4 @@
 
 ### Доступность
 
-Все элементы сайта доступны через управление с клавиатуры. Используйте Tab для передвижения по элементам и Shift+Tab для обратного передвижения. 
-
-В разработке сайта использована семантическая верстка, для всех элементов форм использованы подписи (label).
-
-Подробнее о [доступности контента](https://ru.reactjs.org/docs/accessibility.html).
-
-### Дизайн
-
-Специально сайта разработана [дизайн-система](https://www.figma.com/file/6qxVfBVV8eLYsfYQ55Hfl5/Design-system-My-Bibliography?node-id=1%3A2029&t=TRebzgPj6Ag4lncZ-1). Компоненты дизайн-системы реализованы в формате миксинов, в которых описаны основные стили элементов сайта, указанные в дизайн-система цвета являются SCSS-переменными в коде проекта.
-
-## Внести вклад в проект
-
-My Bibliography — это бесплатная платформа с открытым исходным кодом. Вы можете присоединиться к разработке или предложить новые функции. 
-
-Если вы обнаружили проблему на сайте, воспользуйтесь [формой проблемы](https://github.com/Alice8080/mybibliography.ru/issues/new). 
-
-Если вы хотите внести вклад в разработку, склонируйте репозиторий и создайте отдельную ветку для ваших изменений. Когда вы закончите, создайте pull request и [разрешите внесение изменений](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/allowing-changes-to-a-pull-request-branch-created-from-a-fork), чтобы вашу ветку можно было обновить для слияния.
-
-Любые вопросы по проекту можно задать по почте info@mybibliography.ru.
-
-## Локальный запуск
-
-Системные требования: Python 3.10+, pip 22.3.1+, Node.js 14.16+.
-
-Скопируйте репозиторий:
-
-    git clone https://github.com/Alice8080/mybibliography.ru.git
-
-В папке проекта создайте и активируйте виртуальную среду (активация для разных сред может различаться):
-
-    cd mybibliography
-    python -m venv venv
-
-    # Linux/MacOS
-    source venv/bin/activate
-        
-    # cmd.exe
-    venv\Scripts\activate.bat
-
-    # PowerShell
-    venv\Scripts\Activate.ps1
-
-Установите пакеты для бэкэнда:
-
-	pip install -r requirements.txt
-
-В корневой директории создайте файл .env со следующими данными, где key – секретный ключ приложения Django, который можно сгенерировать [здесь](https://djecrety.ir/):
-
-    SECRET_KEY=key
-    DB_NAME=db_name
-    DB_USER=db_user
-    DB_PASS=db_pass
-
-В режиме разработки можно использовать SQLite, само приложение работает с MySQL. Для использования MySQL установите и запустите сервер MySQL, создайте базу данных с параметрами, соответствующие указанным в .env, и раскомментируйте соответствующие настройки базы данных в [settings.py](https://github.com/Alice8080/mybibliography.ru/blob/f9e22ba51db9bc5075af0d3c8b341f22209cbbb1/main/settings.py#L94).
-
-Приложение использует библиотеку django_remote_forms, устаревший синтаксис которой может вызвать ошибки. Чтобы исправить их, используйте следующие команды:
-
-    sed -i 's/Exception, e/Exception as e/' venv/lib/python3.10/site-packages/django_remote_forms/forms.py
-    sed -i 's/Exception, e/Exception as e/' venv/lib/python3.10/site-packages/django_remote_forms/fields.py
-    sed -i 's/force_unicode/force_str/' venv/lib/python3.10/site-packages/django_remote_forms/utils.py
-
-Для Windows:
-
-    get-content venv/lib/python3.10/site-packages/django_remote_forms/forms.py | %{$_ -replace "Exception, e","Exception as e"}
-    get-content venv/lib/python3.10/site-packages/django_remote_forms/fields.py | %{$_ -replace "Exception, e","Exception as e"}
-    get-content venv/lib/python3.10/site-packages/django_remote_forms/utils.py | %{$_ -replace "force_unicode","force_str"}
-
-
-Проведите миграции:
-	
-	python manage.py makemigrations
-	python manage.py migrate
-
-Запустите сервер:
-
-    python manage.py runserver
-
-Перейдите в папку frontend и загрузите необходимые пакеты для фронтенда:
-	
-    cd frontend
-    npm i 
-
-Запуск в режиме разработки:
-
-    npm start
-
-Приложение будет доступно по адресу [http://localhost:3000](http://localhost:3000).
-
-Сборка приложения:
-
-    npm run build
-
-После сборки приложение будет доступно по адресу [http://localhost:8000](http://localhost:8000).
+Все элементы сайта доступны через управление с клавиатуры. Используйте Tab для передвижения по элементам и Shift+Tab для обратного передвижения. В разработке сайта использована семантическая верстка.

@@ -18,7 +18,7 @@ ChartJS.register(
     Tooltip,
     Legend
 );
-       
+
 ChartJS.defaults.font.size = 16;
 ChartJS.defaults.font.family = "Mulish";
 

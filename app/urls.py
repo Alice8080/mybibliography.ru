@@ -38,4 +38,5 @@ urlpatterns = [
     path('search', views.index),
     path('account', views.index),
     path('about', views.index),
+    path('help', views.index),
 ]

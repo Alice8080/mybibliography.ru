@@ -13,10 +13,10 @@
         li {
             word-wrap: break-word;
             font-style: normal;
-            font-weight: 300;
+            font-weight: 400;
             font-size: 16px;
             line-height: 170%;
-            color: $color_main;
+            color: $main-color;
             text-decoration: none;
             padding-left: 20px;
             margin: 0 0 20px 0;
@@ -41,7 +41,7 @@
     }
 
     &__copy-icon {
-        color: $color_main;
+        color: $main-color;
         width: 21px;
         height: 21px;
         margin: 0 0 0 8px;
@@ -50,12 +50,15 @@
     &__link {
         @include primary-button(15px);
         margin: 0 auto;
+        svg {
+            font-size: 25px;
+        }
     }
 
     &__empty {
         text-align: center;
         font-size: 17px;
-        color: $color_tertiary;
+        color: $secondary-color;
         margin: auto;
     }
 
@@ -250,7 +253,7 @@
                 height: 50px;
                 width: 80%;
                 border-radius: 10px;
-                border: 1px solid $color_light_lines;
+                border: 1px solid $light-lines-color;
 
                 &:first-child {
                     border-radius: 10px;
@@ -275,93 +278,3 @@
         }
     }
 }
-
-
-
-
-
-
-
-// @media (max-width: $lg) {
-//     .list-title {
-//         font-size: 17px;
-//         font-weight: 600;
-//         float: left;
-//     }
-
-//     .list {
-//         font-size: 17px;
-//         font-weight: 300;
-//         float: left;
-//     }
-
-// }
-
-// @media (min-width: $xl) {
-//     .list-title {
-//         font-size: 17px;
-//         font-weight: 600;
-//         float: left;
-//     }
-
-//     .list {
-//         font-size: 17px;
-//         font-weight: 300;
-//         float: left;
-//     }
-
-// }
-
-// @media (max-width: 576px) {
-
-//     .list__title {
-//         font-size: 25px;
-//         margin: 0 0 20px 0;
-//     }
-
-//     .list__wrapper {
-//         background: linear-gradient(332.51deg, #FF6B31 -24.21%, #ff6b31 -5.29%, rgba(250, 104, 55, 0.79) 2.49%, rgba(135, 38, 183, 0.761) 56.28%, rgba(152, 250, 255, 0.818) 91.15%, rgb(152, 250, 255) 100.75%);
-//         border-radius: 40px;
-//         color: #fff;
-//         display: inline-block;
-//         font-size: 14px;
-//         padding: 1px;
-//         text-decoration: none;
-//     }
-
-//     .content {
-//         margin-top: 10px;
-//     }
-
-//     #list__result {
-//         background: rgb(16, 16, 16);
-//         display: block;
-//         padding: 20px 20px 10px 10px;
-//         border-radius: 40px;
-//         line-height: 1.5;
-//     }
-// }
-
-// @media (max-width: 400px) {
-
-//     .list__title {
-//         font-size: 23px;
-//         margin: 0 0 20px 0;
-//     }
-
-//     .list__wrapper {
-//         border-radius: 35px;
-//         font-size: 14px;
-//     }
-
-//     #list__result {
-//         display: block;
-//         padding: 15px 15px 7px 10px;
-//         border-radius: 35px;
-//         line-height: 1.5;
-//     }
-
-//     .list__button-text {
-//         font-size: 14px;
-//     }
-// }

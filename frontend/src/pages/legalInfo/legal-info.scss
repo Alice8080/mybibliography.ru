@@ -9,11 +9,11 @@
                 font-size: 18px;
                 font-weight: 300;
                 text-decoration: underline;
-                color: $color_main;
+                color: $main-color;
                 @include transition();
 
                 &:hover {
-                    color: $color_special;
+                    color: $accent-color;
                 }
             }
         }

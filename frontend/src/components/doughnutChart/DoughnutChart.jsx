@@ -1,4 +1,5 @@
 import { useEffect, useRef } from 'react';
+import { useSelector } from "react-redux";
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js';
 import { Doughnut } from 'react-chartjs-2';
 import './doughnut-chart.scss';
@@ -7,6 +8,8 @@ ChartJS.register(ArcElement, Tooltip, Legend);
 ChartJS.overrides['doughnut'].plugins.legend.display = false;
 
 const DoughnutChart = ({dataPercents}) => {
+  const { theme } = useSelector(state => state.theme);
+
   const sources = dataPercents;
   const options = {
     plugins: {
@@ -20,7 +23,7 @@ const DoughnutChart = ({dataPercents}) => {
       },
     },
   };
-
+  let borderColor = theme === 'light' ? '#ffffff' : '#19191C';
   const data = {
     labels: ['Остальные источники', 'Сайты', 'Статьи с сайтов', 'Статьи из журналов', 'Книги'],
     datasets: [
@@ -28,23 +31,23 @@ const DoughnutChart = ({dataPercents}) => {
         label: '',
         data: [sources.others, sources.sites, sources.site_articles, sources.magazine_articles, sources.books],
         backgroundColor: [
-          '#FF753E',
+          '#f53838',
           '#F3645B',
           '#E55C8C',
           '#C349FF',
           '#801DFF',
         ],
         hoverBackgroundColor: [
-          '#FF753E',
+          '#f53838',
           '#F3645B',
           '#E55C8C',
           '#C349FF',
           '#801DFF',
         ],
-        borderColor: '#0E0E10',
-        hoverBorderColor: '#0E0E10',
+        borderColor: borderColor,
+        hoverBorderColor: borderColor,
         borderWidth: 15,
-        borderRadius: 28,
+        borderRadius: 20,
         hoverOffset: 28,
         rotation: 5
       },
